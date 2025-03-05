@@ -29,9 +29,8 @@
         </div>
       </div>
       <ul class="nav__links" id="nav-links">
-        <li><a href="#home">HOME</a></li>
-        <li><a href="#service">SERVICES</a></li>
-        <li><a href="#property">FUNDS</a></li>
+        <li><a href="calculator.html" target="_blank">OUR CALCULATOR</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/List_of_exchange-traded_funds" target="_blank">FUNDS</a></li>
         <li><a href="#blog">ABOUT US</a></li>
         <li><a href="#contact">CONTACT</a></li>
       </ul>
@@ -52,9 +51,11 @@
           <label for="price">Price</label>
           <input type="text" placeholder="Price" />
         </div>
-        <button class="btn">
-          <i class="ri-search-line"></i>
-        </button>
+        <a href="404.html">
+          <button class="btn">
+            <i class="ri-search-line"></i>
+          </button>
+        </a>
       </form>
     </header>
 
@@ -63,14 +64,14 @@
         <h2 class="section__header">How Do ETFs Work</h2>
         <div class="service__grid">
           <div class="service__card">
-            <img src="assets/service-1.png" alt="service" />
-            <h4>What is a stock?</h4>
+            <img src="/assets/service1.png" alt="service" />
+            <h4>What is an ETF?</h4>
             <p>
               An ETF, or Exchange Traded Fund is a simple and easy way to get access to investment markets. It is a pre-defined basket of bonds, stocks or commodities that are wrapped into a fund and then and listed onto the exchange so that everyone can use it.
             </p>
           </div>
           <div class="service__card">
-            <img src="assets/service-2.png" alt="service" />
+            <img src="/assets/service2.png" alt="service" />
             <h4>Agents</h4>
             <p>
               Connect with an ETF expert who will guide you
@@ -79,7 +80,7 @@
             </p>
           </div>
           <div class="service__card">
-            <img src="assets/service-3.png" alt="service" />
+            <img src="/assets/service3.png" alt="service" />
             <h4>Ease of mind</h4>
             <p>
               Complete your transaction with confidence and ease. We ensure a
@@ -106,7 +107,9 @@
           empower your financial decisions.
         </p>
         <div class="experience__btn">
-          <button class="btn">ETFs</button>
+          <a href="https://en.wikipedia.org/wiki/List_of_exchange-traded_funds" target="_blank">
+            <button class="btn">ETFs</button>
+          </a>
         </div>
       </div>
       <div class="experience__stats">
@@ -125,147 +128,121 @@
       </div>
     </section>
 
-
     <section class="section__container property__container" id="property">
       <h2 class="section__header">Recommended ETFs</h2>
-
       <!-- Slider main container -->
       <div class="swiper">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <!-- Slides -->
           <div class="swiper-slide">
-
             <div class="property__card">
               <!-- Finlogix Widget BEGIN-->
-<div class="finlogix-container"></div>
-<script type="text/javascript" src="https://widget.finlogix.com/Widget.js"></script>
-<script type="text/javascript">
-		Widget.init({
-				widgetId: "9c2e86ff-cd79-4cf5-a1aa-5cb3045bb396",
-				type: "SingleSymbol",
-				language: "en",
-				showBrand: true,
-				isShowTradeButton: true,
-				isShowBeneathLink: true,
-				isShowDataFromACYInfo: true,
-				symbolName: "SP500",
-				withButton: false,
-				isAdaptive: true
-		});
-</script>
-<!-- Finlogix Widget END-->
-              <div class="property__details">
-                <div class="property__details__header">
-                  <h4>S&P500</h4>
-                  <h5>VAUG</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="property__card">
-<!-- Finlogix Widget BEGIN-->
-<div class="finlogix-container"></div>
-<script type="text/javascript" src="https://widget.finlogix.com/Widget.js"></script>
-<script type="text/javascript">
-		Widget.init({
-				widgetId: "9c2e86ff-cd79-4cf5-a1aa-5cb3045bb396",
-				type: "SingleSymbol",
-				language: "en",
-				showBrand: true,
-				isShowTradeButton: true,
-				isShowBeneathLink: true,
-				isShowDataFromACYInfo: true,
-				symbolName: "NAS100",
-				withButton: false,
-				isAdaptive: true
-		});
-</script>
-<!-- Finlogix Widget END-->
-
+              <div class="finlogix-container"></div>
+              <script type="text/javascript" src="https://widget.finlogix.com/Widget.js"></script>
+              <script type="text/javascript">
+                Widget.init({
+                  widgetId: "9c2e86ff-cd79-4cf5-a1aa-5cb3045bb396",
+                  type: "SingleSymbol",
+                  language: "en",
+                  showBrand: false,
+                  isShowTradeButton: false,
+                  isShowBeneathLink: false,
+                  isShowDataFromACYInfo: false,
+                  symbolName: "NAS100",
+                  withButton: false,
+                  isAdaptive: true
+                });
+              </script>
+              <!-- Finlogix Widget END-->
               <div class="property__details">
                 <div class="property__details__header">
                   <h4>Nasdaq 100</h4>
-                  <h5>CXN1</h5>
+                  <h5>CNX1</h5>
                 </div>
               </div>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="property__card">
-              <img src="assets/property-3.jpg" alt="property" />
+              <!-- Finlogix Widget BEGIN-->
+              <div class="finlogix-container"></div>
+              <script type="text/javascript" src="https://widget.finlogix.com/Widget.js"></script>
+              <script type="text/javascript">
+                Widget.init({
+                  widgetId: "9c2e86ff-cd79-4cf5-a1aa-5cb3045bb396",
+                  type: "SingleSymbol",
+                  language: "en",
+                  showBrand: false,
+                  isShowTradeButton: false,
+                  isShowBeneathLink: false,
+                  isShowDataFromACYInfo: false,
+                  symbolName: "SP500",
+                  withButton: false,
+                  isAdaptive: true
+                });
+              </script>
+              <!-- Finlogix Widget END-->
               <div class="property__details">
                 <div class="property__details__header">
-                  <h4>Skyline Tower Apartments</h4>
-                  <h5>$2,500,000</h5>
-                </div>
-                <div class="property__amenities">
-                  <div>
-                    <span><i class="ri-hotel-bed-line"></i></span> 6
-                  </div>
-                  <div>
-                    <span><i class="ri-showers-line"></i></span> 7
-                  </div>
-                  <div>
-                    <span><i class="ri-dashboard-fill"></i></span> 4500ft
-                  </div>
-                </div>
-                <div class="property__location">
-                  <span><i class="ri-map-pin-5-line"></i></span> 2201 West 5th
-                  Street, New York
+                  <h4>S&P500</h4>
+                  <h5>VUAG</h5>
                 </div>
               </div>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="property__card">
-              <img src="assets/property-4.jpg" alt="property" />
+              <!-- Finlogix Widget BEGIN-->
+              <div class="finlogix-container"></div>
+              <script type="text/javascript" src="https://widget.finlogix.com/Widget.js"></script>
+              <script type="text/javascript">
+                Widget.init({
+                  widgetId: "9c2e86ff-cd79-4cf5-a1aa-5cb3045bb396",
+                  type: "SingleSymbol",
+                  language: "en",
+                  showBrand: false,
+                  isShowTradeButton: false,
+                  isShowBeneathLink: false,
+                  isShowDataFromACYInfo: false,
+                  symbolName: "NVIDIA",
+                  withButton: false,
+                  isAdaptive: true
+                });
+              </script>
+              <!-- Finlogix Widget END-->
               <div class="property__details">
                 <div class="property__details__header">
-                  <h4>Maplewood Cottage</h4>
-                  <h5>$540,000</h5>
-                </div>
-                <div class="property__amenities">
-                  <div>
-                    <span><i class="ri-hotel-bed-line"></i></span> 4
-                  </div>
-                  <div>
-                    <span><i class="ri-showers-line"></i></span> 5
-                  </div>
-                  <div>
-                    <span><i class="ri-dashboard-fill"></i></span> 3500ft
-                  </div>
-                </div>
-                <div class="property__location">
-                  <span><i class="ri-map-pin-5-line"></i></span> 980 Maple
-                  Street, Denver
+                  <h4>Nvidia</h4>
+                  <h5>NVDA</h5>
                 </div>
               </div>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="property__card">
-              <img src="assets/property-5.jpg" alt="property" />
+              <!-- Finlogix Widget BEGIN-->
+              <div class="finlogix-container"></div>
+              <script type="text/javascript" src="https://widget.finlogix.com/Widget.js"></script>
+              <script type="text/javascript">
+                Widget.init({
+                  widgetId: "9c2e86ff-cd79-4cf5-a1aa-5cb3045bb396",
+                  type: "SingleSymbol",
+                  language: "en",
+                  showBrand: false,
+                  isShowTradeButton: false,
+                  isShowBeneathLink: false,
+                  isShowDataFromACYInfo: false,
+                  symbolName: "Apple",
+                  withButton: false,
+                  isAdaptive: true
+                });
+              </script>
+              <!-- Finlogix Widget END-->
               <div class="property__details">
                 <div class="property__details__header">
-                  <h4>Royal Crest Mansion</h4>
-                  <h5>$4,800,000</h5>
-                </div>
-                <div class="property__amenities">
-                  <div>
-                    <span><i class="ri-hotel-bed-line"></i></span> 5
-                  </div>
-                  <div>
-                    <span><i class="ri-showers-line"></i></span> 6
-                  </div>
-                  <div>
-                    <span><i class="ri-dashboard-fill"></i></span> 5000ft
-                  </div>
-                </div>
-                <div class="property__location">
-                  <span><i class="ri-map-pin-5-line"></i></span> 1789 Kingsway,
-                  Beverly Hills
+                  <h4>Apple</h4>
+                  <h5>AAPL</h5>
                 </div>
               </div>
             </div>
@@ -286,20 +263,21 @@
       <div class="section__container footer__container">
         <div class="footer__col">
           <div class="footer__logo">
-            <a href="#">ETF Core</a>
+            <a href="#">etfCore</a>
           </div>
           <p>
-            At ETF Core, we make buying, selling, and investing in ETFs (Exchange-Traded Funds)
-            easy and stress-free. But we don’t stop there—we also cover everything about the stock market, 
-            individual stocks, and smart investing strategies. Whether you're looking to grow your wealth through 
-            ETFs, stocks, or even investing savings accounts, we're here to help you build a rock-solid financial foundation!
+            At etfCore, we make buying, selling, and investing in etfs (Exchange Traded Funds) easy
+            and stress-free. Let's build your rock-solid core in ETFs and investing!
           </p>
           <ul class="footer__socials">
             <li>
-              <a href="#"><i class="ri-facebook-fill"></i></a>
+              <i class="ri-tiktok-fill"></i>
             </li>
             <li>
-              <a href="#"><i class="ri-twitter-fill"></i></a>
+              <i class="ri-twitter-x-line"></i>
+            </li>
+            <li>
+              <i class="ri-mail-line"></i>
             </li>
           </ul>
         </div>
@@ -316,7 +294,7 @@
           <h4>SUPPORT</h4>
           <ul class="footer__links">
             <li><a href="#">FAQs</a></li>
-            <li><a href="#">List of all ETFs</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/List_of_exchange-traded_funds" target="_blank">List of all ETFs</a></li>
             <li><a href="#">Buyer's Guide</a></li>
             <li><a href="#">Seller's Guide</a></li>
             <li><a href="#">Privacy Policy</a></li>
