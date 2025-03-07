@@ -21,7 +21,7 @@
     <nav>
       <div class="nav__header">
         <div class="nav__logo">
-          <a href="#"><img src="/assets/coregrad.png" alt="ETF Core Logo">etfCore.com</a>
+          <a href="#"><img src="/assets/coregrad.png" alt="ETF Core Logo">ETFCore.com</a>
         </div>
 
         <div class="nav__menu__btn" id="menu-btn">
@@ -31,7 +31,7 @@
       <ul class="nav__links" id="nav-links">
         <li><a href="calculator.html" target="_blank">OUR CALCULATOR</a></li>
         <li><a href="https://en.wikipedia.org/wiki/List_of_exchange-traded_funds" target="_blank">FUNDS</a></li>
-        <li><a href="#blog">ABOUT US</a></li>
+        <li><a href="#about">ABOUT US</a></li>
         <li><a href="#contact">CONTACT</a></li>
       </ul>
     </nav>
@@ -43,19 +43,56 @@
       </div>
 
       <form action="/">
-        <div class="input__group">
-          <label for="locatifon">ETF Name</label>
-          <input type="text" placeholder="ETF Name" />
-        </div>
-        <div class="input__group">
-          <label for="price">Price</label>
-          <input type="text" placeholder="Price" />
-        </div>
-        <a href="404.html">
-          <button class="btn">
-            <i class="ri-search-line"></i>
-          </button>
-        </a>
+<!-- Finlogix Widget BEGIN-->
+<div class="finlogix-container"></div>
+<script type="text/javascript" src="https://widget.finlogix.com/Widget.js"></script>
+<script type="text/javascript">
+		Widget.init({
+				widgetId: "9c2e86ff-cd79-4cf5-a1aa-5cb3045bb396",
+				type: "StripBar",
+				language: "en",
+				showBrand: false,
+				isShowTradeButton: false,
+				isShowBeneathLink: false,
+				isShowDataFromACYInfo: false,
+				symbolPairs: [
+								{
+												symbolId: "10007",
+												symbolName: "Apple"
+								},
+								{
+												symbolId: "10021",
+												symbolName: "NVIDIA"
+								},
+								{
+												symbolId: "10005",
+												symbolName: "Alphabet-A"
+								},
+								{
+												symbolId: "10035",
+												symbolName: "Intel"
+								},
+								{
+												symbolId: "20030",
+												symbolName: "Salesforce"
+								},
+								{
+												symbolId: "10029",
+												symbolName: "Microsoft"
+								},
+								{
+												symbolId: "10003",
+												symbolName: "Adobe"
+								}
+				],
+				isAdaptive: true
+		});
+</script>
+<!-- Finlogix Widget END-->
+<a href="https://www.trading212.com/trading-instruments/isa" target="_blank" class="btn">
+  <i class="ri-search-line"></i>
+</a>
+
       </form>
     </header>
 
@@ -251,10 +288,6 @@
           <!-- Add Pagination -->
   <div class="swiper-pagination"></div>
 
-  <!-- Add Navigation -->
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
-
   <!-- Add Scrollbar -->
   <div class="swiper-scrollbar"></div>
       </div>
@@ -272,11 +305,12 @@
       <div class="section__container footer__container">
         <div class="footer__col">
           <div class="footer__logo">
-            <a href="#">etfCore</a>
+            <section id="about">
+              <h1>About ETF Core</h1>
+            </section>
           </div>
           <p>
-            At etfCore, we make buying, selling, and investing in etfs (Exchange Traded Funds) easy
-            and stress-free. Let's build your rock-solid core in ETFs and investing!
+            At ETF Core, we are passionate about making buying, selling, and investing in ETFs (Exchange Traded Funds) easy and stress-free. While we are not professional financial advisors, we are a group of dedicated individuals who have a deep interest in the stock market and continuously study investing to provide valuable insights. Our goal is to help you build a rock-solid foundation in ETFs and investing by simplifying the process, sharing our knowledge, and making it accessible to everyone, whether you're a beginner or an experienced investor looking to refine your strategy.
           </p>
           <ul class="footer__socials">
             <li>
@@ -293,7 +327,6 @@
         <div class="footer__col">
           <h4>OUR COMPANY</h4>
           <ul class="footer__links">
-            <li><a href="#">About Us</a></li>
             <li><a href="#">Our Services</a></li>
             <li><a href="#">How It Works</a></li>
             <li><a href="#">Contact Us</a></li>
