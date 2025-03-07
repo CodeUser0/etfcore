@@ -2,6 +2,7 @@ const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.getElementById("nav-links");
 const menuBtnIcon = menuBtn.querySelector("i");
 
+
 menuBtn.addEventListener("click", (e) => {
   navLinks.classList.toggle("open");
 
@@ -52,11 +53,28 @@ ScrollReveal().reveal(".experience__stats", {
   delay: 1500,
 });
 
-const swiper = new Swiper(".swiper", {
-  slidesPerView: 2,
-  spaceBetween: 20,
-  loop: true,
+document.addEventListener("DOMContentLoaded", function () {
+  const swiper = new Swiper(".swiper", {
+    slidesPerView: 2, // Number of slides visible at once
+    spaceBetween: 20, // Spacing between slides
+    loop: true, // Enable infinite scrolling
+
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true, // Allows clicking to navigate
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    scrollbar: {
+      el: ".swiper-scrollbar",
+      draggable: true, // Allows dragging the scrollbar
+    },
+  });
 });
+
+
 
 ScrollReveal().reveal(".subscribe .section__header", {
   ...scrollRevealOption,
