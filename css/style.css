@@ -173,7 +173,7 @@ header {
 
 .header__image {
   height: 100%;
-  background-image: url("/assets/header.png");
+  background-image: url("/assets/pic3.jpg");
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
@@ -313,8 +313,8 @@ header .btn {
 
 .experience__image {
   height: 100%;
-  background-image: url("/assets/etfinfo.png");
-  background-position: calc(50% - 230px) center;
+  background-image: url("/assets/pic1.jpg");
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 15rem;
