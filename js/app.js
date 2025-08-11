@@ -1,85 +1,101 @@
-const menuBtn = document.getElementById("menu-btn");
-const navLinks = document.getElementById("nav-links");
-const menuBtnIcon = menuBtn.querySelector("i");
+// ----- Mobile menu toggle -----
+const menuBtn = document.getElementById('menu-btn');
+const navLinks = document.getElementById('nav-links');
 
-
-menuBtn.addEventListener("click", (e) => {
-  navLinks.classList.toggle("open");
-
-  const isOpen = navLinks.classList.contains("open");
-  menuBtnIcon.setAttribute(
-    "class",
-    isOpen ? "ri-close-line" : "ri-menu-3-line"
-  );
+menuBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
 });
 
-navLinks.addEventListener("click", (e) => {
-  navLinks.classList.remove("open");
-  menuBtnIcon.setAttribute("class", "ri-menu-3-line");
+// Close menu when clicking outside (optional)
+document.addEventListener('click', (e) => {
+  if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+    navLinks.classList.remove('active');
+  }
 });
 
-const scrollRevealOption = {
-  distance: "50px",
-  origin: "bottom",
-  duration: 1000,
-};
+// ----- Calculator JS -----
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.getElementsByClassName('button');
 
-ScrollReveal().reveal(".header__content h1", {
-  ...scrollRevealOption,
-});
-ScrollReveal().reveal("header form", {
-  ...scrollRevealOption,
-  delay: 500,
-});
+  if (buttons.length > 0) {
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener('click', function () {
+        const initial = parseFloat(document.getElementById('initial').value);
+        const contribution = parseFloat(document.getElementById('contribution').value);
+        const nominalRate = parseFloat(document.getElementById('rate').value) / 100;
+        const inflationRate = parseFloat(document.getElementById('inflation').value) / 100;
+        let expenses = parseFloat(document.getElementById('expenses').value);
+        const years = parseInt(document.getElementById('years').value);
 
-ScrollReveal().reveal(".service__card", {
-  ...scrollRevealOption,
-  interval: 500,
-});
+        if (
+          isNaN(initial) ||
+          isNaN(contribution) ||
+          isNaN(nominalRate) ||
+          isNaN(inflationRate) ||
+          isNaN(expenses) ||
+          isNaN(years) ||
+          initial < 0 ||
+          contribution < 0 ||
+          nominalRate < 0 ||
+          inflationRate < 0 ||
+          expenses < 0 ||
+          years < 0
+        ) {
+          alert('Please enter valid positive numbers for all fields.');
+          return;
+        }
 
-ScrollReveal().reveal(".experience__content .section__header", {
-  ...scrollRevealOption,
-});
-ScrollReveal().reveal(".experience__content p", {
-  ...scrollRevealOption,
-  delay: 500,
-});
-ScrollReveal().reveal(".experience__btn", {
-  ...scrollRevealOption,
-  delay: 1000,
-});
-ScrollReveal().reveal(".experience__stats", {
-  ...scrollRevealOption,
-  delay: 1500,
-});
+        const realRate = (1 + nominalRate) / (1 + inflationRate) - 1;
 
-document.addEventListener("DOMContentLoaded", function () {
-  const swiper = new Swiper(".swiper", {
-    slidesPerView: 2, // Number of slides visible at once
-    spaceBetween: 20, // Spacing between slides
-    loop: true, // Enable infinite scrolling
+        let futureValue = initial;
+        const balances = [futureValue];
+        for (let j = 0; j < years; j++) {
+          expenses *= 1 + inflationRate;
+          futureValue = (futureValue + contribution - expenses) * (1 + realRate);
+          balances.push(futureValue);
+        }
 
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true, // Allows clicking to navigate
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    scrollbar: {
-      el: ".swiper-scrollbar",
-      draggable: true, // Allows dragging the scrollbar
-    },
-  });
-});
+        document.getElementById('result').textContent =
+          'Approximate end balance: £' + futureValue.toLocaleString();
 
+        const ctx = document.getElementById('balanceChart').getContext('2d');
 
+        if (window.myChart) {
+          window.myChart.destroy();
+        }
 
-ScrollReveal().reveal(".subscribe .section__header", {
-  ...scrollRevealOption,
-});
-ScrollReveal().reveal(".subscribe form", {
-  ...scrollRevealOption,
-  delay: 500,
+        window.myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: Array.from({ length: years + 1 }, (_, i) => `Year ${i}`),
+            datasets: [
+              {
+                label: 'Investment Value (£)',
+                data: balances,
+                borderWidth: 1,
+                borderColor: 'grey',
+                tension: 0.4,
+              },
+            ],
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
+            },
+          },
+        });
+      });
+    }
+
+    const inputs = document.querySelectorAll('.calculator input[type="number"]');
+    inputs.forEach((input) => {
+      input.addEventListener('input', () => {
+        document.getElementById('result').textContent = '';
+      });
+    });
+  } else {
+    console.log("No elements with class 'button' found.");
+  }
 });
