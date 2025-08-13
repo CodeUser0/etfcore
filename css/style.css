@@ -167,9 +167,15 @@ html {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 1rem 1rem;
-  background: #fff;
+  background: #e5e7eb;
+  border: 1px dashed #9ca3af;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgb(0 0 0 / 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  font-size: 1rem;
 }
 
 /* Section general styling */
@@ -655,3 +661,51 @@ button {
   padding: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.article-search {
+  margin-bottom: 1rem;
+}
+.article-search input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  outline: none;
+}
+.article-search input:focus {
+  border-color: #2563eb;
+}
+
+.articles__grid {
+  display: flex;
+  flex-direction: column;  /* stack articles vertically */
+  gap: 1rem;
+  height: 500px;           /* adjust height as needed */
+  overflow-y: auto;        /* vertical scroll */
+  overflow-x: hidden;      /* prevent horizontal scroll */
+  scroll-behavior: smooth;
+  padding-bottom: 0.5rem;
+}
+
+.article-card {
+  background: #d0ebff;
+  border: 2px solid #1e3a8a;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 0.75rem;       /* slightly smaller padding */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  background: #a5d8ff;          /* slightly darker soft blue on hover */
+}
+
+@media (max-width: 600px) {
+  .article-card {
+    min-width: 240px;
+  }
+}
+
