@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (buttons.length > 0) {
     for (let i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener('click', function () {
+        // Calculator logic...
         const initial = parseFloat(document.getElementById('initial').value);
         const contribution = parseFloat(document.getElementById('contribution').value);
         const nominalRate = parseFloat(document.getElementById('rate').value) / 100;
@@ -97,5 +98,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   } else {
     console.log("No elements with class 'button' found.");
+  }
+
+  // ----- Article search -----
+  const searchInput = document.getElementById('searchInput');
+  if (searchInput) {
+    const articles = document.querySelectorAll('.article-card');
+
+    searchInput.addEventListener('input', function () {
+      const filter = this.value.toLowerCase();
+
+      articles.forEach((article) => {
+        const title = article.getAttribute('data-title').toLowerCase();
+        if (title.includes(filter)) {
+          article.style.display = '';
+        } else {
+          article.style.display = 'none';
+        }
+      });
+    });
   }
 });
