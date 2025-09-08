@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ETFCore - Article</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/article.css" />
+
+  <!-- Adsense placeholder script -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2879594594117398"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav__header">
+      <div class="nav__logo">
+        <a href="https://etfcore.com">
+          <img src="/assets/coregrad.png" alt="ETF Core Logo" />
+          ETFCore
+        </a>
+      </div>
+      <ul class="nav__links">
+        <li><a href="https://etfcore.com">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header Section -->
+  <header id="header">
+    <h1 class="header-title">Free Shares for You and Your Friends! 🚀</h1>
+    <p class="header-meta">Stock market • September 06, 2025</p>
+  </header>
+
+  <!-- Layout Wrapper -->
+  <div class="layout">
+
+    <!-- Left Ad -->
+    <aside class="ad-column">
+      <div class="ad-placeholder">Ad Space</div>
+    </aside>
+
+    <!-- Article Content -->
+    <main class="article-container">
+      <article>
+        <img src="/assets/article-image.jpg" alt="Article Image" class="article-image" />
+        <p>
+            Trading 212 has been one of the most popular platforms in Europe for <b>commission-free</b> stock and ETF investing. If you’ve been considering opening an account, <b>now is the perfect time</b>. Their “Invite a Friend” campaign is running until November 6th, 2025, giving you and your friends free fractional shares just for signing up and funding your account. The Trading 212 free shares campaign 2025 is a simple, <b><i>risk-free</b></i> way to start investing in the stock market. Whether you’re new to investing or already trading, this <b><i>limited-time offer</b></i> gives you a head start by rewarding both you and your friends with free stocks. <br><br>👉 Sign up today using this link to claim your free share: <a href="https://www.trading212.com/invite/19AxQ28yOM" target="_blank" rel="noopener noreferrer"> Join Trading 212 </a>
+        </p>
+        <h2>How the Trading 212 Free Shares Campaign Works</h2>
+        <p>
+          Here’s a breakdown of how you can take advantage of this limited-time promotion:
+            <br><br><b>1.</b> Sign up with Trading 212 – Use this <a href="https://www.trading212.com/invite/19AxQ28yOM" target="_blank" rel="noopener noreferrer"> exclusive invite link </a>
+            <br><b>2.</b>  Verify your account – A quick identity check ensures compliance with regulations.
+            <br><b>3.</b> Make your first deposit – The minimum deposit depends on your region.
+            <br><b>4.</b>  Receive free shares – Both you and your friend get a fractional share in real companies like Apple, Tesla, or other global giants.
+            <br><br>It’s a simple way to kickstart your investing journey, whether you’re new to the stock market or already building your portfolio.
+        </p>
+
+          <h2>Why Choose Trading 212 in 2025?</h2>
+        <p>
+         Trading 212 isn’t just about free shares. It’s widely seen as one of the best trading apps for beginners and experienced investors alike. Here’s why:
+            <br><br>✅ Commission-free trading – No fees when buying or selling stocks and ETFs.
+            <br>✅ Fractional shares – Own part of big companies with as little as £1.
+            <br>✅ User-friendly app – Highly rated on both iOS and Android.
+            <br>✅ Invest or trade – Use Trading 212 Invest for long-term investing or Trading 212 CFD for short-term trading.
+            <br>✅ Educational tools – Free virtual account and learning resources for beginners.
+            <br>✅ Regulated platform – Trading 212 is fully regulated in the UK and EU.
+            <br><br>👉 Don’t miss out: Sign up <a href="https://www.trading212.com/invite/19AxQ28yOM" target="_blank" rel="noopener noreferrer"> here </a> and grab your free share
+        </p>
+          </p>
+          <h2>Frequently Asked Questions (FAQ)</h2>
+        <p>
+          <b><i>When will I get my free fractional shares?</b></i>
+            <br>Within 3 business days after both you and your friend have verified and funded your Trading 212 Invest / S&S ISA with the Minimum Deposit.
+            <br>Note: The minimum deposit amount can vary based on the region.
+
+        <br><br><b><i>What is the time limit to meet the requirements?</b></i>
+        <br>The promotion requirements must be met no later than 10 days after the account's creation.
+
+        <br><br><b><i>Is there a duration of the campaign?</b></i>
+        <br>Yes, the present campaign will be active for the following period: 08/09/2025 – 06/10/2025.
+
+        <br><br><b><i>When can I sell my shares and withdraw their value?</b></i>
+        <br>You can sell the free fractional shares immediately. However, their cash value may be withdrawn after 30 days.
+
+        <br><br><b><i>Can I lose money?</b></i>
+        <br>No, you cannot lose more than the value of your account.
+        </p>
+          </p>
+          <h2>Important links</h2>
+        <p>
+          •   <a href="https://www.trading212.com/legal-documentation/Invite-a-Friend-terms_EN.pdf" target="_blank" rel="noopener noreferrer"> Official Trading 212 Invite a Friend Terms of Service </a>
+            <br>•  <a href="https://www.trading212.com/invite/19AxQ28yOM" target="_blank" rel="noopener noreferrer"> Claim Your Free Share Now </a>
+        </p>
+      </article>
+
+      <!-- Comment Section -->
+      <section class="comments-section">
+        <h3>Helpful resources</h3>
+            <p>Introduction to Fractional Shares: How to Invest from Just £1</p>
+        <iframe class="video"
+                src="https://www.youtube-nocookie.com/embed/cgpCnvuqAZM?si=dZFJkAhYyld5iFlH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p>How to Buy Your First Share</p>
+          <iframe class="video" src="https://www.youtube-nocookie.com/embed/RL8OWHoLaFY?si=OjWtjynfhdLvD8vv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </section>
+    </main>
+
+    <!-- Right Ad -->
+    <aside class="ad-column">
+      <div class="ad-placeholder">Ad Space</div>
+    </aside>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer__container">
+      <p>© ETFCore 2023-2025. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="article.js"></script>
+</body>
+</html>
