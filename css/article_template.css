@@ -5,11 +5,13 @@
   box-sizing: border-box;
 }
 
+/* Add spacing to body so content isn’t hidden behind nav */
 body {
   font-family: 'Inter', sans-serif;
   background: #f9fafb;
   color: #111;
   line-height: 1.6;
+  padding-top: 70px; /* adjust this equal to nav height */
 }
 
 /* Navigation */
@@ -17,7 +19,13 @@ nav {
   background: #fff;
   border-bottom: 1px solid #e5e7eb;
   box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  position: fixed;          /* keeps it on screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;            /* ensures it’s above other elements */
 }
+
 .nav__header {
   max-width: 1200px;
   margin: auto;
@@ -50,6 +58,12 @@ nav {
 }
 .nav__links li a:hover {
   color: #2563eb;
+}
+/* Responsive nav adjustments */
+@media (max-width: 768px) {
+  .nav__links {
+    display: none; /* hide links on small screens for now */
+  }
 }
 
 /* Header Section */
