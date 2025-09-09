@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX');
+    </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ETFCore - Article</title>
@@ -10,6 +19,7 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="../css/article_template.css" />
+    <link rel="icon" type="image/png" href="../assets/etfcore ball.png" />
 
   <!-- Adsense placeholder script -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2879594594117398"
@@ -22,7 +32,7 @@
     <div class="nav__header">
       <div class="nav__logo">
         <a href="https://etfcore.com">
-          <img src="/assets/coregrad.png" alt="ETF Core Logo" />
+          <img src="../assets/etfcore ball.png" alt="ETF Core Logo" />
           ETFCore
         </a>
       </div>
@@ -49,7 +59,7 @@
     <!-- Article Content -->
     <main class="article-container">
       <article>
-        <img src="/assets/article-image.jpg" alt="Article Image" class="article-image" />
+        <img src="../assets/article-image.jpg" alt="Article Image" class="article-image" />
         <p>
           This is the introductory paragraph of your article. You can write as much as you need here.
           The template is styled to be easy to read with a clear font and good spacing.
@@ -82,6 +92,6 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="js/article_template.js"></script>
+  <script src="article.js"></script>
 </body>
 </html>
