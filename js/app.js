@@ -1,4 +1,4 @@
-const apiKey = "AIzaSyBl53BqxewFvcWJMlvKiCe70g53J6W1bCE"; // Provided by environment at runtime
+const apiKey = "AIzaSyBl53BqxewFvcWJMlvKiCe70g53J6W1bCE"; // Put your API Key here
 
 document.addEventListener('DOMContentLoaded', () => {
     
@@ -140,32 +140,32 @@ document.addEventListener('DOMContentLoaded', () => {
         myChart = new Chart(ctx, config);
     }
 
-    // --- SEARCH ---
+    // --- IMPROVED SEARCH (Checks Headline and Body text) ---
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
         const articles = document.querySelectorAll('.article-card');
+        
         searchInput.addEventListener('input', function () {
             const filter = this.value.toLowerCase();
+            
             articles.forEach((article) => {
-                const title = article.getAttribute('data-title').toLowerCase();
-                article.style.display = title.includes(filter) ? 'flex' : 'none';
+                // Get the Headline
+                const headline = article.querySelector('h3').innerText.toLowerCase();
+                // Get the Description text
+                const text = article.querySelector('p').innerText.toLowerCase();
+                
+                // If either matches, show it
+                if (headline.includes(filter) || text.includes(filter)) {
+                    article.style.display = 'flex';
+                } else {
+                    article.style.display = 'none';
+                }
             });
         });
     }
 });
 
 // --- GLOBAL FUNCTIONS (For onclick HTML attributes) ---
-
-function checkAnswer(isCorrect) {
-    const result = document.getElementById('quiz-result');
-    if(isCorrect) {
-        result.style.display = 'block'; result.style.color = '#4ade80';
-        result.innerHTML = "Correct! An ETF holds many assets to spread risk.";
-    } else {
-        result.style.display = 'block'; result.style.color = '#f87171';
-        result.innerText = "Not quite! An ETF is a basket, not a single stock.";
-    }
-}
 
 function updateStrategyPreview() {
     const initial = document.getElementById('initial').value;
@@ -183,8 +183,6 @@ function switchAiTab(tabName) {
     document.getElementById(`panel-${tabName}`).classList.add('active');
     document.querySelectorAll('.ai-tab-btn').forEach(b => b.classList.remove('active'));
     const buttons = document.querySelectorAll('.ai-tab-btn');
-    // Simple logic to toggle active class on buttons
-    // We assume the order is Jargon (0) then Strategy (1)
     if(tabName === 'jargon') buttons[0].classList.add('active');
     else buttons[1].classList.add('active');
 }
