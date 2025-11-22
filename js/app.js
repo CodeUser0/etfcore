@@ -1,4 +1,4 @@
-const apiKey = ""; // Provided by environment at runtime
+const apiKey = "AIzaSyBl53BqxewFvcWJMlvKiCe70g53J6W1bCE"; // Provided by environment at runtime
 
 document.addEventListener('DOMContentLoaded', () => {
     
