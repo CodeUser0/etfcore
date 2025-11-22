@@ -228,7 +228,7 @@
         <div class="ai-container">
             <div class="ai-header">
                 <h3><i class="ri-sparkling-fill" style="color: #fbbf24;"></i> AI Financial Assistant</h3>
-                <p>Use AI assistant Jargon Buster, Powered by Gemini LLM to breakdown fincacial texts to help with understanding or use Strategy Analyst using data inputted into the calculator to generate helpful insights according to your plan.</p>
+                <p>Use AI assistant Jargon Buster, Powered by Gemini LLM to breakdown fincacial texts or use Strategy Analyst using data inputted into the calculator to generate helpful insights.</p>
             </div>
             <div class="ai-body">
                 <div class="ai-tabs">
@@ -236,8 +236,8 @@
                     <button class="ai-tab-btn" onclick="switchAiTab('strategy')">Strategy Analyst</button>
                 </div>
                 <div id="panel-jargon" class="ai-panel active">
-                    <textarea id="jargon-input" class="ai-input-area" placeholder="Paste text here..."></textarea>
-                    <button class="ai-action-btn" onclick="runJargonBuster()">Simplify Text ✨ (e.g. "Notwithstanding the hawkish pivot in quantitative tightening protocols, the localized volatility within the mezzanine tranches of synthetic collateralized debt obligations has necessitated a delta-neutral hedging strategy to mitigate systemic counterparty risk while preserving alpha in a stagflationary macro-environment.")</button>
+                    <textarea id="jargon-input" class="ai-input-area" placeholder="Paste text here... (e.g. 'Notwithstanding the hawkish pivot in quantitative tightening protocols, the localized volatility within the mezzanine tranches of synthetic collateralized debt obligations has necessitated a delta-neutral hedging strategy to mitigate systemic counterparty risk while preserving alpha in a stagflationary macro-environment')"></textarea>
+                    <button class="ai-action-btn" onclick="runJargonBuster()">Simplify Text ✨</button>
                     <div id="jargon-loading" class="ai-loading"><i class="ri-loader-4-line ri-spin"></i> Decoding...</div>
                     <div id="jargon-result" class="ai-result"></div>
                 </div>
