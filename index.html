@@ -14,75 +14,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ETFCore | Free ETF Investment Calculator & Portfolio Guide</title>
-    <meta name="description" content="Calculate your future wealth with our free ETF investment calculator. Learn how to build a low-cost, tax-efficient portfolio with S&P 500 and global index funds.">
-    <meta name="keywords" content="ETF calculator, investment calculator UK, S&P 500 calculator, how to invest in ETFs, Vanguard alternative, low cost index funds">
+    <meta name="description" content="Calculate your future wealth with our free ETF investment calculator. Learn how to build a low-cost, tax-efficient portfolio.">
+    <meta name="keywords" content="ETF calculator, investment calculator UK, S&P 500 calculator, how to invest in ETFs">
     <meta name="author" content="ETFCore">
-    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.etfcore.com/">
 
-    <!-- SEO: Open Graph / Social Media Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.etfcore.com/">
-    <meta property="og:title" content="ETFCore | Visualize Your Financial Freedom">
-    <meta property="og:description" content="Don't guess your future. Calculate it. Use our free tools to plan a tax-efficient ETF portfolio.">
-    <meta property="og:image" content="https://www.etfcore.com/assets/ETFCore%20ball.png">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ETFCore | Free ETF Investment Calculator">
-    <meta name="twitter:description" content="Plan your wealth with real inflation-adjusted data.">
-
-    <!-- SEO: Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "name": "ETFCore",
-          "url": "https://www.etfcore.com/",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://www.etfcore.com/#calculator",
-            "query-input": "required name=search_term_string"
-          }
-        },
-        {
-          "@type": "SoftwareApplication",
-          "name": "ETFCore Investment Calculator",
-          "applicationCategory": "FinanceApplication",
-          "operatingSystem": "Web",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "GBP"
-          },
-          "description": "A tool to calculate compound interest on ETF investments with inflation adjustments."
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What is the best ETF for beginners?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "For many beginners, a broad market index fund like an All-World ETF (e.g., VWRL) or an S&P 500 ETF (e.g., VUAG) is recommended."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How do ETF fees work?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "ETFs charge an annual fee called the Expense Ratio (TER). This is automatically deducted from the fund's value."
-              }
-            }
-          ]
-        }
-      ]
-    }
-    </script>
+    <!-- CSS Linking -->
+    <link rel="stylesheet" href="css/styles.css">
 
     <!-- External Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -97,9 +35,6 @@
     
     <!-- Finlogix Library -->
     <script type="text/javascript" src="https://widget.finlogix.com/Widget.js"></script>
-
-    <!-- MAIN STYLESHEET -->
-    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -112,7 +47,6 @@
             <span class="ticker-item">ETFCore Global <span class="up">▲ 1.2%</span></span>
             <span class="ticker-item">Gold <span class="up">▲ 0.3%</span></span>
             <span class="ticker-item">Bitcoin <span class="down">▼ 1.5%</span></span>
-            <!-- Repeat for loop effect -->
             <span class="ticker-item">S&P 500 <span class="up">▲ 0.45%</span></span>
             <span class="ticker-item">NASDAQ <span class="up">▲ 0.82%</span></span>
         </div>
@@ -123,7 +57,7 @@
         <div class="nav__header">
             <div class="nav__logo">
                 <a href="/" title="ETFCore Home">
-                    <img class="logo" src="/assets/ETFCore ball.png" alt="ETFCore Logo - Low Cost Investing" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2492/2492759.png'"/> 
+                    <img class="logo" src="/assets/ETFCore ball.png" alt="ETFCore Logo" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2492/2492759.png'"/> 
                     ETFCore
                 </a>
             </div>
@@ -142,14 +76,13 @@
     <!-- 3. HERO SECTION -->
     <header id="header">
         <h1>Build Wealth with Low-Cost, Tax-Efficient ETFs</h1>
-        <p class="tagline">We are hobbyists demystifying the stock market. No suits, no hidden fees, just pure data. Plan your financial freedom today.</p>
+        <p class="tagline">We are hobbyists demystifying the stock market. No suits, no hidden fees, just pure data.</p>
         
         <div class="header__actions">
             <a href="#calculator" class="btn-glass"><i class="ri-line-chart-line"></i> Start Calculating</a>
             <a href="#ai-assistant" class="btn-glass" style="background:white; color:var(--primary);">Try AI Advisor ✨</a>
         </div>
 
-        <!-- Finlogix Widget Container -->
         <div id="finlogix-wrapper" style="margin-top: 2rem; opacity: 0.9; min-height: 50px;">
             <div class="finlogix-container"></div>
         </div>
@@ -164,22 +97,22 @@
 
     <!-- 4. EDUCATION CARDS -->
     <section class="section__container" id="service">
-        <h2 class="section__header">Why Choose ETFs for Your Portfolio?</h2>
+        <h2 class="section__header">Why Choose ETFs?</h2>
         <div class="service__grid">
             <article class="glass-card">
                 <div class="icon-box"><i class="ri-shopping-basket-2-line"></i></div>
                 <h3>What is an ETF?</h3>
-                <p>Think of it as a basket of stocks. Instead of buying one apple, you buy the whole fruit bowl. Instant diversification with a single click, reducing your risk compared to single stocks.</p>
+                <p>Think of it as a basket of stocks. Instead of buying one apple, you buy the whole fruit bowl. Instant diversification.</p>
             </article>
             <article class="glass-card">
                 <div class="icon-box"><i class="ri-seedling-line"></i></div>
                 <h3>Compound Growth</h3>
-                <p>Dividends are reinvested automatically. Over time, this "interest on interest" effect can turn small monthly deposits into significant wealth. Our calculator helps you visualize this.</p>
+                <p>Dividends are reinvested automatically. Over time, this "interest on interest" effect can build significant wealth.</p>
             </article>
             <article class="glass-card">
                 <div class="icon-box"><i class="ri-scales-3-line"></i></div>
                 <h3>Stocks vs. ETFs</h3>
-                <p>Individual stocks are exciting but risky. Core ETFs provide stability. We recommend a 90% Core (ETF) and 10% Satellite (Stock) strategy for long term success.</p>
+                <p>Individual stocks are risky. Core ETFs provide stability. We recommend a 90% Core (ETF) and 10% Satellite strategy.</p>
             </article>
         </div>
     </section>
@@ -194,7 +127,7 @@
                         <i class="ri-blaze-line" style="font-size: 3rem; color: #f59e0b; margin-bottom: 10px;"></i>
                         <h3>S&P 500</h3>
                         <p style="color:#64748b">Ticker: <strong>VUAG</strong></p>
-                        <p style="font-size: 0.9rem">The top 500 US Companies. A staple for any portfolio.</p>
+                        <p style="font-size: 0.9rem">The top 500 US Companies.</p>
                     </div>
                 </div>
                 <div class="swiper-slide">
@@ -202,7 +135,7 @@
                         <i class="ri-global-line" style="font-size: 3rem; color: #3b82f6; margin-bottom: 10px;"></i>
                         <h3>All-World</h3>
                         <p style="color:#64748b">Ticker: <strong>VWRL</strong></p>
-                        <p style="font-size: 0.9rem">Diversify across the entire planet with one fund.</p>
+                        <p style="font-size: 0.9rem">Diversify across the entire planet.</p>
                     </div>
                 </div>
                 <div class="swiper-slide">
@@ -210,7 +143,7 @@
                         <i class="ri-cpu-line" style="font-size: 3rem; color: #8b5cf6; margin-bottom: 10px;"></i>
                         <h3>Nasdaq 100</h3>
                         <p style="color:#64748b">Ticker: <strong>CNX1</strong></p>
-                        <p style="font-size: 0.9rem">Tech-heavy growth focus for aggressive investors.</p>
+                        <p style="font-size: 0.9rem">Tech-heavy growth focus.</p>
                     </div>
                 </div>
             </div>
@@ -219,10 +152,10 @@
         </div>
     </section>
 
-    <!-- 6. CALCULATOR -->
+    <!-- 6. CALCULATOR WITH RAINBOW BUTTON -->
     <section class="section__container" id="calculator">
         <h2 class="section__header">ETF Investment Calculator</h2>
-        <p style="text-align:center; color: #64748b; margin-bottom: 1rem;">See how compound interest and inflation affect your potential wealth over time.</p>
+        <p style="text-align:center; color: #64748b; margin-bottom: 1rem;">See how compound interest works for you.</p>
         
         <div class="calc-wrapper">
             <div class="calc-controls">
@@ -230,38 +163,42 @@
                     <label for="initial">Initial Investment (£)</label>
                     <div class="input-wrapper">
                         <i class="ri-money-pound-circle-line"></i>
-                        <input type="number" id="initial" value="1000" aria-label="Initial Investment">
+                        <input type="number" id="initial" value="1000">
                     </div>
                 </div>
                 <div class="input-group">
                     <label for="contribution">Monthly Contribution (£)</label>
                     <div class="input-wrapper">
                         <i class="ri-hand-coin-line"></i>
-                        <input type="number" id="contribution" value="200" aria-label="Monthly Contribution">
+                        <input type="number" id="contribution" value="200">
                     </div>
                 </div>
                 <div class="input-group">
                     <label for="rate">Annual Growth (%)</label>
                     <div class="input-wrapper">
                         <i class="ri-line-chart-fill"></i>
-                        <input type="number" id="rate" value="8" aria-label="Annual Growth Rate">
+                        <input type="number" id="rate" value="8">
                     </div>
                 </div>
                 <div class="input-group">
                     <label for="years">Time Horizon (Years)</label>
                     <div class="input-wrapper">
                         <i class="ri-time-line"></i>
-                        <input type="number" id="years" value="15" aria-label="Years">
+                        <input type="number" id="years" value="15">
                     </div>
                 </div>
                 <div class="input-group">
                     <label for="inflation">Inflation Rate (%)</label>
                     <div class="input-wrapper">
                         <i class="ri-price-tag-3-line"></i>
-                        <input type="number" id="inflation" value="2.8" aria-label="Inflation Rate">
+                        <input type="number" id="inflation" value="2.8">
                     </div>
                 </div>
-                <button class="calc-btn" id="calculate-btn">Calculate Future Value</button>
+                
+                <!-- RAINBOW BUTTON HERE -->
+                <div style="display:flex; justify-content:center; margin-top: 20px;">
+                    <button class="rainbow-btn" id="calculate-btn">Calculate Future Value</button>
+                </div>
             </div>
 
             <div class="calc-visuals">
@@ -275,17 +212,14 @@
                         <div class="stat-value" style="color: var(--accent);" id="stat-interest">£0</div>
                     </div>
                 </div>
-
                 <div class="chart-tabs">
                     <button class="tab-btn active" data-type="line">Growth Curve</button>
                     <button class="tab-btn" data-type="bar">Breakdown</button>
                     <button class="tab-btn" data-type="doughnut">Split</button>
                 </div>
-
                 <div style="position: relative; height: 300px; width: 100%;">
                     <canvas id="mainChart"></canvas>
                 </div>
-                <p style="font-size:0.8rem; text-align:center; margin-top:10px; color:#94a3b8;">*Figures are estimates based on historical market averages.</p>
             </div>
         </div>
     </section>
@@ -295,63 +229,92 @@
         <div class="ai-container">
             <div class="ai-header">
                 <h3><i class="ri-sparkling-fill" style="color: #fbbf24;"></i> AI Financial Assistant</h3>
-                <p>Powered by Gemini LLM to help you decode finance and plan smarter.</p>
+                <p>Powered by Gemini LLM.</p>
             </div>
             <div class="ai-body">
                 <div class="ai-tabs">
                     <button class="ai-tab-btn active" onclick="switchAiTab('jargon')">Jargon Buster</button>
                     <button class="ai-tab-btn" onclick="switchAiTab('strategy')">Strategy Analyst</button>
                 </div>
-
                 <div id="panel-jargon" class="ai-panel active">
-                    <p style="margin-bottom: 10px; color: #475569;">Paste confusing financial news or text below, and I'll explain it simply.</p>
-                    <textarea id="jargon-input" class="ai-input-area" placeholder="e.g., 'The Federal Reserve's hawkish stance on quantitative tightening implies bearish sentiment...'"></textarea>
+                    <textarea id="jargon-input" class="ai-input-area" placeholder="Paste text here..."></textarea>
                     <button class="ai-action-btn" onclick="runJargonBuster()">Simplify Text ✨</button>
-                    
-                    <div id="jargon-loading" class="ai-loading"><i class="ri-loader-4-line ri-spin"></i> Decoding complex terms...</div>
+                    <div id="jargon-loading" class="ai-loading"><i class="ri-loader-4-line ri-spin"></i> Decoding...</div>
                     <div id="jargon-result" class="ai-result"></div>
                 </div>
-
                 <div id="panel-strategy" class="ai-panel">
-                    <p style="margin-bottom: 10px; color: #475569;">I will read your inputs from the <b>Calculator</b> above and generate a personalized summary and motivational tips.</p>
                     <div style="background: #f1f5f9; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
                         <strong>Current Plan:</strong> <span id="strategy-preview" style="color: var(--primary);">...</span>
                     </div>
                     <button class="ai-action-btn" onclick="runStrategyAnalyst()">Analyze My Plan ✨</button>
-                    
-                    <div id="strategy-loading" class="ai-loading"><i class="ri-loader-4-line ri-spin"></i> Analyzing your wealth trajectory...</div>
+                    <div id="strategy-loading" class="ai-loading"><i class="ri-loader-4-line ri-spin"></i> Analyzing...</div>
                     <div id="strategy-result" class="ai-result"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 7. ARTICLES -->
+    <!-- 7. SCROLLABLE ARTICLES SECTION -->
     <section class="section__container" id="articles">
-        <h2 class="section__header">Latest Investment Insights</h2>
+        <h2 class="section__header">Investment Insights</h2>
+        
+        <!-- Search Bar -->
         <div style="max-width: 400px; margin: 0 auto 2rem; position: relative;">
             <i class="ri-search-line" style="position: absolute; left: 12px; top: 12px; color: #94a3b8;"></i>
-            <input type="text" id="searchInput" placeholder="Search articles..." style="width:100%; padding: 10px 10px 10px 40px; border-radius: 50px; border: 1px solid #e2e8f0;" aria-label="Search Articles">
+            <input type="text" id="searchInput" placeholder="Search all articles..." style="width:100%; padding: 10px 10px 10px 40px; border-radius: 50px; border: 1px solid #e2e8f0;">
         </div>
-        <div class="service__grid" id="articleList">
-            <article class="article-card" data-title="Free Shares">
-                <span style="font-size:0.7rem; background:#dbeafe; color:var(--primary); padding: 2px 8px; border-radius:4px; width:fit-content; margin-bottom:10px;">PROMO</span>
-                <h3>Shares worth up to £100?</h3>
-                <p>Discover how to receive free fractional shares for you and your friends.</p>
-                <a href="article/free_shares" class="btn-link">Read Article <i class="ri-arrow-right-line"></i></a>
-            </article>
-            <article class="article-card" data-title="Fees">
-                <span style="font-size:0.7rem; background:#fef3c7; color:#d97706; padding: 2px 8px; border-radius:4px; width:fit-content; margin-bottom:10px;">EDUCATION</span>
-                <h3>Understanding ETF Fees</h3>
-                <p>What is an Expense Ratio? Learn how 0.5% can cost you thousands over time.</p>
-                <a href="article/article_template" class="btn-link">Read Article <i class="ri-arrow-right-line"></i></a>
-            </article>
-            <article class="article-card" data-title="Performance">
-                 <span style="font-size:0.7rem; background:#dcfce7; color:var(--accent); padding: 2px 8px; border-radius:4px; width:fit-content; margin-bottom:10px;">ANALYSIS</span>
-                <h3>Top Performers 2025</h3>
-                <p>An overview of ETFs that have delivered exceptional returns this year.</p>
-                <a href="article/article_template" class="btn-link">Read Article <i class="ri-arrow-right-line"></i></a>
-            </article>
+
+        <!-- Scrollable Grid -->
+        <div id="article-scroll-container">
+            <div class="service__grid article-list">
+                <!-- Article 1 -->
+                <article class="article-card">
+                    <span style="font-size:0.7rem; background:#dbeafe; color:var(--primary); padding: 2px 8px; border-radius:4px; width:fit-content; margin-bottom:10px;">PROMO</span>
+                    <h3>Shares worth up to £100?</h3>
+                    <p>Discover how to receive free fractional shares for you and your friends.</p>
+                    <a href="article/free_shares" class="btn-link">Read Article <i class="ri-arrow-right-line"></i></a>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="article-card">
+                    <span style="font-size:0.7rem; background:#fef3c7; color:#d97706; padding: 2px 8px; border-radius:4px; width:fit-content; margin-bottom:10px;">EDUCATION</span>
+                    <h3>Understanding ETF Fees</h3>
+                    <p>What is an Expense Ratio? Learn how 0.5% can cost you thousands over time.</p>
+                    <a href="article/article_template" class="btn-link">Read Article <i class="ri-arrow-right-line"></i></a>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="article-card">
+                    <span style="font-size:0.7rem; background:#dcfce7; color:var(--accent); padding: 2px 8px; border-radius:4px; width:fit-content; margin-bottom:10px;">ANALYSIS</span>
+                    <h3>Top Performers 2025</h3>
+                    <p>An overview of ETFs that have delivered exceptional returns this year.</p>
+                    <a href="article/article_template" class="btn-link">Read Article <i class="ri-arrow-right-line"></i></a>
+                </article>
+
+                <!-- Article 4 (Added for scroll demo) -->
+                <article class="article-card">
+                    <span style="font-size:0.7rem; background:#f3e8ff; color:#9333ea; padding: 2px 8px; border-radius:4px; width:fit-content; margin-bottom:10px;">STRATEGY</span>
+                    <h3>Dividend Aristocrats</h3>
+                    <p>How to build a passive income stream using high-yield ETFs.</p>
+                    <a href="article/article_template" class="btn-link">Read Article <i class="ri-arrow-right-line"></i></a>
+                </article>
+
+                 <!-- Article 5 (Added for scroll demo) -->
+                 <article class="article-card">
+                    <span style="font-size:0.7rem; background:#ffe4e6; color:#e11d48; padding: 2px 8px; border-radius:4px; width:fit-content; margin-bottom:10px;">RISK</span>
+                    <h3>Market Crash Survival</h3>
+                    <p>What to do when the market drops 20%. Hint: Don't panic sell.</p>
+                    <a href="article/article_template" class="btn-link">Read Article <i class="ri-arrow-right-line"></i></a>
+                </article>
+
+                 <!-- Article 6 (Added for scroll demo) -->
+                 <article class="article-card">
+                    <span style="font-size:0.7rem; background:#dbeafe; color:var(--primary); padding: 2px 8px; border-radius:4px; width:fit-content; margin-bottom:10px;">GUIDE</span>
+                    <h3>ISA vs GIA Accounts</h3>
+                    <p>Understanding UK tax wrappers and how to pay £0 capital gains tax.</p>
+                    <a href="article/article_template" class="btn-link">Read Article <i class="ri-arrow-right-line"></i></a>
+                </article>
+            </div>
         </div>
     </section>
 
@@ -364,7 +327,7 @@
                 <i class="ri-arrow-down-s-line"></i>
             </button>
             <div class="faq-answer">
-                Historically, the S&P 500 has returned approximately 10% annually before inflation. However, past performance does not guarantee future results, and markets can fluctuate significantly.
+                Historically, the S&P 500 has returned approximately 10% annually before inflation.
             </div>
         </div>
         <div class="faq-item">
@@ -373,44 +336,20 @@
                 <i class="ri-arrow-down-s-line"></i>
             </button>
             <div class="faq-answer">
-                Yes, like all stock market investments, the value of an ETF can go down as well as up. However, because ETFs are diversified (holding many companies), the risk of losing everything is generally lower than holding a single stock.
-            </div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">
-                Is ETFCore a financial advisor?
-                <i class="ri-arrow-down-s-line"></i>
-            </button>
-            <div class="faq-answer">
-                No, ETFCore is an educational platform run by enthusiasts. We provide tools and data to help you make your own decisions, but we do not offer personalized financial advice.
+                Yes, investments can go down as well as up.
             </div>
         </div>
     </section>
 
-    <!-- 9. QUIZ & FOOTER -->
-    <section class="section__container">
-        <div class="quiz-widget">
-            <h3><i class="ri-lightbulb-flash-line"></i> Quick Knowledge Check</h3>
-            <p id="quiz-question" style="margin: 1rem 0; font-size: 1.1rem;">Does an ETF track a single stock or a basket of assets?</p>
-            <div id="quiz-options">
-                <button class="quiz-btn" onclick="checkAnswer(false)">Single Stock</button>
-                <button class="quiz-btn" onclick="checkAnswer(true)">Basket of Assets</button>
-            </div>
-            <p id="quiz-result" style="margin-top: 1rem; font-weight:bold; display:none;"></p>
-        </div>
-    </section>
-
+    <!-- 9. FOOTER -->
     <footer style="background: var(--dark); color: #94a3b8; padding: 3rem 2rem; text-align:center;">
         <div style="display:flex; justify-content:center; gap: 2rem; margin-bottom: 2rem; font-size: 1.5rem;">
-            <a href="https://twitter.com/ETFCoreUK" style="color:white" aria-label="Twitter"><i class="ri-twitter-x-line"></i></a>
-            <a href="#" style="color:white" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
-            <a href="#" style="color:white" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+            <a href="https://twitter.com/ETFCoreUK" style="color:white"><i class="ri-twitter-x-line"></i></a>
+            <a href="#" style="color:white"><i class="ri-instagram-line"></i></a>
         </div>
-        <p>© ETFCore 2023-2025. Empowering Investors.</p>
-        <p style="font-size: 0.8rem; margin-top: 10px;">Disclaimer: Capital at risk. Information is for educational purposes only.</p>
+        <p>© ETFCore 2023-2025.</p>
     </footer>
 
-    <!-- Scripts at the bottom -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/app.js"></script>
 </body>
