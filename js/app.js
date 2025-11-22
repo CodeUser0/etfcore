@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
         myChart = new Chart(ctx, config);
     }
 
-    // --- IMPROVED SEARCH (Checks Headline and Body text) ---
+    // --- IMPROVED SEARCH ---
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
         const articles = document.querySelectorAll('.article-card');
@@ -149,13 +149,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const filter = this.value.toLowerCase();
             
             articles.forEach((article) => {
-                // Get the Headline
+                // Search both headline AND the paragraph text
                 const headline = article.querySelector('h3').innerText.toLowerCase();
-                // Get the Description text
-                const text = article.querySelector('p').innerText.toLowerCase();
+                const bodyText = article.querySelector('p').innerText.toLowerCase();
                 
-                // If either matches, show it
-                if (headline.includes(filter) || text.includes(filter)) {
+                if (headline.includes(filter) || bodyText.includes(filter)) {
                     article.style.display = 'flex';
                 } else {
                     article.style.display = 'none';
@@ -166,6 +164,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // --- GLOBAL FUNCTIONS (For onclick HTML attributes) ---
+
+function checkAnswer(isCorrect) {
+    const result = document.getElementById('quiz-result');
+    if(isCorrect) {
+        result.style.display = 'block'; result.style.color = '#4ade80';
+        result.innerHTML = "Correct! An ETF holds many assets to spread risk.";
+    } else {
+        result.style.display = 'block'; result.style.color = '#f87171';
+        result.innerText = "Not quite! An ETF is a basket, not a single stock.";
+    }
+}
 
 function updateStrategyPreview() {
     const initial = document.getElementById('initial').value;
