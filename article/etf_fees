@@ -140,6 +140,7 @@
         
         h2 { font-size: 1.8rem; color: var(--dark); margin-top: 2.5rem; margin-bottom: 1rem; }
         p { margin-bottom: 1.5rem; font-size: 1.1rem; color: #334155; }
+        li { margin-bottom: 0.5rem; color: #334155; }
         
         /* Glass Box (Key Takeaways) */
         .glass-box {
@@ -241,46 +242,53 @@
             <div class="meta-data">
                 <span class="meta-tag">EDUCATION</span>
                 <span><i class="ri-time-line"></i> 5 min read</span>
-                <span><i class="ri-calendar-line"></i> Nov 2025</span>
             </div>
 
-            <h1>Understanding ETF Fees: The Silent Wealth Killer</h1>
+            <h1>Why 1% Fees Are Losing You £21,000</h1>
             
             <p class="intro">
-                You might think a 1% fee sounds small. But over 30 years, that tiny number could eat up to 25% of your total retirement pot. Here is exactly how fees work and how to avoid them.
+                0.1 percent, 0.5 percent, 1 percent... they all sound like tiny numbers. But while a 1% fee might not look like much on a statement, over decades it can quietly devour a huge chunk of your wealth.
             </p>
 
             <!-- KEY TAKEAWAYS BOX -->
             <div class="glass-box">
                 <h3><i class="ri-lightbulb-flash-line"></i> Key Takeaways</h3>
                 <ul style="padding-left: 20px; margin-top: 10px;">
-                    <li><strong>TER (Total Expense Ratio)</strong> is the annual fee taken automatically.</li>
-                    <li>Compounding works on fees too (negatively).</li>
-                    <li>Aim for core ETFs with a TER below <strong>0.20%</strong>.</li>
+                    <li><strong>Fees Compound:</strong> Just like interest, your costs grow exponentially over time.</li>
+                    <li><strong>The Difference:</strong> A 0.9% difference in fees can cost you £21,750 over 30 years on a £10k investment.</li>
+                    <li><strong>Check the KID:</strong> Always find the expense ratio on the "Key Investor Document" before buying.</li>
                 </ul>
             </div>
 
-            <h2>What is an Expense Ratio?</h2>
-            <p>Every ETF has a management team (or a computer algorithm) running it. They charge a fee for this service. This is called the TER.</p>
-            <p>If you invest £10,000 in a fund with a <strong>1.00%</strong> fee, you pay £100 a year. If you choose a Vanguard or iShares Core fund with a <strong>0.07%</strong> fee, you pay just £7.</p>
+            <h2>The £21,000 Gap</h2>
+            <p>Let's look at the numbers. Imagine you invest a lump sum of <strong>£10,000</strong> and assume an 8% annual return over 30 years.</p>
+            <p>Here is what happens depending on the fee you pay:</p>
+            
+            <ul>
+                <li><strong>Fund A (0.1% Expense):</strong> Grows to <strong>£97,868</strong>.</li>
+                <li><strong>Fund B (1.0% Expense):</strong> Grows to <strong>£76,122</strong>.</li>
+            </ul>
 
-            <!-- INTERACTIVE CHART WIDGET -->
+            <p>That is a difference of over <strong>£21,750</strong>. You haven't done anything differently—same market, same return—but nearly a quarter of your potential profit has vanished into fees.</p>
+
+            <!-- INTERACTIVE CHART WIDGET (UPDATED DATA) -->
             <div class="chart-container">
                 <canvas id="feesChart"></canvas>
             </div>
-            <p style="text-align: center; font-size: 0.8rem; color: #64748b;">*Impact of 0.1% vs 1.0% fees over 30 years on a £10k investment.</p>
+            <p style="text-align: center; font-size: 0.8rem; color: #64748b;">*Projection based on £10k lump sum at 8% annual growth.</p>
 
-            <h2>The Transaction Cost Trap</h2>
-            <p>Apart from the holding fee, you might pay to buy the stock. This is the "Spread" (the difference between buy and sell price) and your broker's commission.</p>
-            <blockquote>
-                "In investing, you get what you don't pay for. Costs matter." 
-                <br><strong>— John Bogle, Founder of Vanguard</strong>
-            </blockquote>
+            <h2>Why Does This Happen?</h2>
+            <p>It's all down to compounding. Yes, your interest compounds, but <strong>so do your expenses</strong>.</p>
+            <p>In the expensive fund (1% fee), you lose roughly £100 in the first year. That hurts, but it's manageable. By year 30, because your pot has grown, that same 1% fee is now costing you <strong>£761 a year</strong>.</p>
+            <p>In contrast, the low-cost fund (0.1%) is only costing you £98 a year by year 30—less than the expensive fund charged you on day one.</p>
 
-            <h2>How to Lower Your Costs</h2>
-            <p>1. <strong>Use a low-cost broker:</strong> Platforms like Trading212 or InvestEngine often have zero commission.<br>
-            2. <strong>Stick to Index Funds:</strong> Passive funds are cheaper than active ones.<br>
-            3. <strong>Check the TER:</strong> Always look at the Key Investor Information Document (KIID).</p>
+            <h2>Where to Find the Fee?</h2>
+            <p>You don't need to be a detective. On your broker's app or website (like Trading212 or Hargreaves Lansdown), look for the <strong>KID (Key Investor Document)</strong> or the "Costs and Charges" section.</p>
+            <p>You are looking for the <strong>Total Expense Ratio (TER)</strong> or "Ongoing Charge."</p>
+
+            <h2>Is High Fee Ever Worth It?</h2>
+            <p>Sometimes, yes. A slightly higher fee can be justified if you are trying to access a very specific sector or region that is hard to trade (like Emerging Markets or Robotics). </p>
+            <p>But for a simple S&P 500 or Global Tracker? Paying more than 0.1% or 0.2% for the same thing is, quite frankly, silly.</p>
 
             <!-- REACTION BUTTONS -->
             <div class="reactions">
@@ -299,17 +307,35 @@
         <!-- RIGHT SIDEBAR (WIDGETS + ADS) -->
         <aside class="ad-rail right-rail">
             
-            <!-- Widget: Popular Tickers -->
+            <!-- Widget: Popular ETFs (NO CRYPTO/SINGLE STOCKS) -->
             <div style="background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0;">
-                <h4 style="margin-bottom: 1rem;">Trending Now</h4>
+                <h4 style="margin-bottom: 1rem;">Popular ETFs</h4>
+                
+                <!-- IITU (Requested) -->
                 <div style="display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #f1f5f9; padding-bottom: 5px;">
-                    <strong>S&P 500</strong> <span style="color: #10b981;">+0.8%</span>
+                    <div>
+                        <strong style="display:block; font-size:0.9rem;">IITU</strong>
+                        <span style="font-size:0.7rem; color:#64748b;">S&P 500 Info Tech</span>
+                    </div>
+                    <span style="color: #10b981; font-weight:600;">+1.2%</span>
                 </div>
+
+                <!-- VUAG -->
                 <div style="display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #f1f5f9; padding-bottom: 5px;">
-                    <strong>Bitcoin</strong> <span style="color: #f87171;">-1.2%</span>
+                    <div>
+                        <strong style="display:block; font-size:0.9rem;">VUAG</strong>
+                        <span style="font-size:0.7rem; color:#64748b;">S&P 500 Acc</span>
+                    </div>
+                    <span style="color: #10b981; font-weight:600;">+0.8%</span>
                 </div>
+
+                <!-- VWRL -->
                 <div style="display: flex; justify-content: space-between;">
-                    <strong>Gold</strong> <span style="color: #10b981;">+0.3%</span>
+                    <div>
+                        <strong style="display:block; font-size:0.9rem;">VWRL</strong>
+                        <span style="font-size:0.7rem; color:#64748b;">FTSE All-World</span>
+                    </div>
+                    <span style="color: #10b981; font-weight:600;">+0.5%</span>
                 </div>
             </div>
 
@@ -351,10 +377,9 @@
         // 2. REACTION BUTTONS
         function toggleReaction(btn) {
             btn.classList.toggle('active');
-            // Here you could add logic to save to database
         }
 
-        // 3. CHART.JS (The Cost of Fees)
+        // 3. CHART.JS (Updated Data from PDF)
         const ctx = document.getElementById('feesChart').getContext('2d');
         const feesChart = new Chart(ctx, {
             type: 'line',
@@ -363,7 +388,7 @@
                 datasets: [
                     {
                         label: 'Low Fee (0.1%)',
-                        data: [10000, 26000, 68000, 175000],
+                        data: [10000, 21589, 46609, 97868], /* Approx 8% growth curve */
                         borderColor: '#10b981',
                         backgroundColor: 'rgba(16, 185, 129, 0.1)',
                         fill: true,
@@ -371,7 +396,7 @@
                     },
                     {
                         label: 'High Fee (1.0%)',
-                        data: [10000, 23000, 54000, 128000],
+                        data: [10000, 19671, 38696, 76122], /* Approx 7% growth curve */
                         borderColor: '#f87171',
                         borderDash: [5, 5],
                         fill: false,
@@ -384,7 +409,22 @@
                 maintainAspectRatio: false,
                 plugins: {
                     legend: { position: 'bottom' },
-                    title: { display: true, text: 'Portfolio Value Over Time' }
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': £' + context.parsed.y.toLocaleString();
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        ticks: {
+                            callback: function(value) {
+                                return '£' + value.toLocaleString();
+                            }
+                        }
+                    }
                 }
             }
         });
