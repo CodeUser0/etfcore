@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <!-- SEO Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Understanding ETF Fees | ETFCore Insights</title>
+    <meta name="description" content="A deep dive into Expense Ratios, Transaction Costs, and how to minimize fees in your portfolio.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2879594594117398" crossorigin="anonymous"></script>
+
+    <style>
+        /* --- CORE THEME --- */
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --accent: #10b981;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --radius: 16px;
+            --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #f0f4f8;
+            background-image: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 20%),
+                              radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 20%);
+            color: #334155;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* PROGRESS BAR */
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
+        .progress-bar {
+            height: 4px;
+            background: var(--accent);
+            width: 0%;
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        /* NAVIGATION */
+        nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .back-link {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* LAYOUT GRID */
+        .article-wrapper {
+            max-width: 1400px;
+            margin: 2rem auto;
+            display: grid;
+            grid-template-columns: 250px 1fr 300px;
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+
+        /* ADS & SIDEBARS */
+        .ad-rail {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .sticky-content {
+            position: sticky;
+            top: 100px; 
+        }
+        .ad-slot {
+            background: #e2e8f0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            overflow: hidden;
+        }
+        .ad-skyscraper { width: 100%; height: 600px; }
+        .ad-square { width: 100%; height: 250px; }
+
+        /* MAIN ARTICLE */
+        .main-article {
+            background: white;
+            padding: 3rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        /* TYPOGRAPHY */
+        h1 { font-size: 2.5rem; line-height: 1.2; color: var(--dark); margin-bottom: 1rem; }
+        .meta-data { color: #64748b; font-size: 0.9rem; margin-bottom: 2rem; display: flex; gap: 1rem; align-items: center; }
+        .meta-tag { background: #dbeafe; color: var(--primary); padding: 4px 8px; border-radius: 4px; font-weight: 600; font-size: 0.75rem; }
+        
+        h2 { font-size: 1.8rem; color: var(--dark); margin-top: 2.5rem; margin-bottom: 1rem; }
+        p { margin-bottom: 1.5rem; font-size: 1.1rem; color: #334155; }
+        li { margin-bottom: 0.5rem; color: #334155; }
+        
+        /* DISCLAIMER BOX (Fixed at bottom) */
+        .disclaimer-box {
+            background-color: #fef2f2;
+            border: 1px solid #fee2e2;
+            border-left: 4px solid #ef4444;
+            color: #991b1b;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        /* GLASS BOX */
+        .glass-box {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(16, 185, 129, 0.05));
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        .glass-box h3 { margin-bottom: 0.5rem; color: var(--dark); font-size: 1.2rem; display: flex; align-items: center; gap: 8px; }
+
+        /* CHART CONTAINER */
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+            margin: 2rem 0;
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 1rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* REACTION BUTTONS */
+        .reactions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        .reaction-btn {
+            background: white;
+            border: 2px solid #e2e8f0;
+            padding: 8px 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #64748b;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .reaction-btn:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+        .reaction-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+        /* LIVE TICKER WIDGET STYLES */
+        .live-ticker-value {
+            transition: color 0.3s ease;
+        }
+        .ticker-up { color: #10b981; animation: flashGreen 1s; }
+        .ticker-down { color: #ef4444; animation: flashRed 1s; }
+
+        @keyframes flashGreen { 0% { background-color: #d1fae5; } 100% { background-color: transparent; } }
+        @keyframes flashRed { 0% { background-color: #fee2e2; } 100% { background-color: transparent; } }
+
+        /* RESPONSIVE BREAKPOINTS */
+        @media (max-width: 1100px) {
+            /* Hide left ad rail on medium screens */
+            .article-wrapper { grid-template-columns: 1fr 300px; }
+            .left-rail { display: none; }
+        }
+        
+        @media (max-width: 800px) {
+            /* Single column stack on mobile */
+            .article-wrapper { grid-template-columns: 1fr; }
+            .right-rail { display: none; } /* Hide sidebar widgets on mobile */
+            .main-article { padding: 1.5rem; }
+            h1 { font-size: 1.8rem; }
+            .reactions { flex-wrap: wrap; }
+            .nav-logo img { height: 24px; }
+            nav { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PROGRESS BAR -->
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="../index.html" class="nav-logo">
+            <img src="../assets/ETFCore ball.png" alt="ETFCore" style="height: 30px;">
+            ETFCore
+        </a>
+        <a href="../index.html" class="back-link"><i class="ri-arrow-left-line"></i> Back to Home</a>
+    </nav>
+
+    <div class="article-wrapper">
+
+        <!-- LEFT SIDEBAR (ADS) -->
+        <aside class="ad-rail left-rail">
+            <div class="sticky-content">
+                <p style="font-size: 0.7rem; color: #cbd5e1; margin-bottom: 5px; text-align: center;">ADVERTISEMENT</p>
+                <div class="ad-slot ad-skyscraper">
+                     <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-2879594594117398"
+                         data-ad-slot="1234567890"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-article">
+            
+            <div class="meta-data">
+                <span class="meta-tag">EDUCATION</span>
+                <span><i class="ri-time-line"></i> 5 min read</span>
+            </div>
+
+            <h1>Why 1% Fees Are Losing You £21,000</h1>
+            
+            <p class="intro">
+                0.1 percent, 0.5 percent, 1 percent... they all sound like tiny numbers. But while a 1% fee might not look like much on a statement, over decades it can quietly devour a huge chunk of your wealth.
+            </p>
+          
+            <!-- KEY TAKEAWAYS BOX -->
+            <div class="glass-box">
+                <h3><i class="ri-lightbulb-flash-line"></i> Key Takeaways</h3>
+                <ul style="padding-left: 20px; margin-top: 10px;">
+                    <li><strong>Fees Compound:</strong> Just like interest, your costs grow exponentially over time.</li>
+                    <li><strong>The Difference:</strong> A 0.9% difference in fees can cost you £21,750 over 30 years on a £10k investment.</li>
+                    <li><strong>Check the KID:</strong> Always find the expense ratio on the "Key Investor Document" before buying.</li>
+                </ul>
+            </div>
+
+            <h2>What is an Expense Ratio?</h2>
+            <p>Every ETF has a management team (or a computer algorithm) running it. They charge a fee for this service. This is called the TER.</p>
+            <p>If you invest £10,000 in a fund with a <strong>1.00%</strong> fee, you pay £100 a year. If you choose a Vanguard or iShares Core fund with a <strong>0.07%</strong> fee, you pay just £7.</p>
+
+            <h2>The £21,000 Gap</h2>
+            <p>Let's look at the numbers. Imagine you invest a lump sum of <strong>£10,000</strong> and assume an 8% annual return over 30 years.</p>
+            <p>Here is what happens depending on the fee you pay:</p>
+            
+            <ul>
+                <li><strong>Fund A (0.1% Expense):</strong> Grows to <strong>£97,868</strong>.</li>
+                <li><strong>Fund B (1.0% Expense):</strong> Grows to <strong>£76,122</strong>.</li>
+            </ul>
+
+            <p>That is a difference of over <strong>£21,750</strong>! You haven't done anything differently—same market, same return—but nearly a quarter of your potential profit has vanished into fees.</p>
+
+            <!-- INTERACTIVE CHART WIDGET (UPDATED DATA) -->
+            <div class="chart-container">
+                <canvas id="feesChart"></canvas>
+            </div>
+            <p style="text-align: center; font-size: 0.8rem; color: #64748b;">*Projection based on £10k lump sum at 8% annual growth.</p>
+
+            <h2>Why Does This Happen?</h2>
+            <p>It's all down to compounding. Yes, your interest compounds, but <strong>so do your expenses</strong>.</p>
+            <p>In the expensive fund (1% fee), you lose roughly £100 in the first year. That hurts, but it's manageable.</p>
+            <p>However, by year 30, because your pot has grown, that same 1% fee is now costing you <strong>£761 a year</strong>.</p>
+            <p>In contrast, the low-cost fund (0.1%) is only costing you £98 a year by year 30—less than the expensive fund charged you on day one.</p>
+
+            <h2>Where to Find the Fee?</h2>
+            <p>You don't need to be a detective. On your broker's app or website (like Trading212 or Hargreaves Lansdown), look for the <strong>KID (Key Investor Document)</strong> or the "Costs and Charges" section.</p>
+            <p>You are looking for the <strong>Total Expense Ratio (TER)</strong> or "Ongoing Charge."</p>
+
+            <h2>The Transaction Cost Trap</h2>
+            <p>Apart from the holding fee, you might pay to buy the stock. This is the "Spread" (the difference between buy and sell price) and your broker's commission.</p>
+            <blockquote>
+                "In investing, you get what you don't pay for. Costs matter." 
+                <br><strong>— John Bogle, Founder of Vanguard</strong>
+            </blockquote>
+
+          
+            <h2>Is High Fee Ever Worth It?</h2>
+            <p>Sometimes, yes. A slightly higher fee can be justified if you are trying to access a very specific sector or region that is hard to trade (like Emerging Markets or Robotics). </p>
+            <p>But for a simple S&P 500 or Global Tracker? Paying more than 0.1% or 0.2% for the same thing is, quite frankly, silly.</p>
+
+            <h2>How to Lower Your Costs</h2>
+            <p>1. <strong>Use a low-cost broker:</strong> Platforms like Trading212 or InvestEngine often have zero commission.<br>
+            2. <strong>Stick to Index Funds:</strong> Passive funds are cheaper than active ones.<br>
+            3. <strong>Check the TER:</strong> Always look at the Key Investor Information Document (KIID).</p>
+
+            <!-- REACTION BUTTONS -->
+            <div class="reactions">
+                <button class="reaction-btn" onclick="toggleReaction(this)">
+                    <i class="ri-thumb-up-line"></i> Helpful
+                </button>
+                <button class="reaction-btn" onclick="toggleReaction(this)">
+                    <i class="ri-fire-line"></i> Mindblown
+                </button>
+                <button class="reaction-btn" onclick="toggleReaction(this)">
+                    <i class="ri-money-pound-circle-line"></i> Bullish
+                </button>
+            </div>
+
+            <!-- DISCLAIMER BOX (At the very bottom) -->
+            <div class="disclaimer-box">
+                <i class="ri-alert-line" style="font-size: 1.2rem;"></i>
+                <div>
+                    <strong>Important Disclaimer:</strong> We are enthusiasts and hobbyists, not professional financial advisors. 
+                    This content is for educational and entertainment purposes only. Please do your own research or consult a qualified professional before investing.
+                </div>
+            </div>
+
+        </main>
+
+        <!-- RIGHT SIDEBAR (LIVE WIDGETS + ADS) -->
+        <aside class="ad-rail right-rail">
+            
+            <!-- Widget: Live ETFs -->
+            <div style="background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+                <h4 style="margin-bottom: 1rem; display:flex; justify-content:space-between; align-items:center;">
+                    Live Market <span style="font-size:0.6rem; color:#94a3b8; background:#f1f5f9; padding:2px 6px; border-radius:4px;">LIVE</span>
+                </h4>
+                
+                <!-- IITU -->
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #f1f5f9; padding-bottom: 5px;">
+                    <div>
+                        <strong style="display:block; font-size:0.9rem;">IITU</strong>
+                        <span style="font-size:0.7rem; color:#64748b;">S&P 500 Info Tech</span>
+                    </div>
+                    <span class="live-ticker-value" id="ticker-iitu" style="font-weight:600;">+1.20%</span>
+                </div>
+
+                <!-- VUAG -->
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #f1f5f9; padding-bottom: 5px;">
+                    <div>
+                        <strong style="display:block; font-size:0.9rem;">VUAG</strong>
+                        <span style="font-size:0.7rem; color:#64748b;">S&P 500 Acc</span>
+                    </div>
+                    <span class="live-ticker-value" id="ticker-vuag" style="font-weight:600;">+0.80%</span>
+                </div>
+
+                <!-- VWRL -->
+                <div style="display: flex; justify-content: space-between;">
+                    <div>
+                        <strong style="display:block; font-size:0.9rem;">VWRL</strong>
+                        <span style="font-size:0.7rem; color:#64748b;">FTSE All-World</span>
+                    </div>
+                    <span class="live-ticker-value" id="ticker-vwrl" style="font-weight:600;">+0.50%</span>
+                </div>
+            </div>
+
+            <div class="sticky-content">
+                <p style="font-size: 0.7rem; color: #cbd5e1; margin-bottom: 5px; text-align: center;">SPONSORED</p>
+                <div class="ad-slot ad-square">
+                     <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-2879594594117398"
+                         data-ad-slot="1234567890"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer style="background: var(--dark); color: #94a3b8; padding: 2rem; text-align:center; margin-top: 4rem;">
+        <p>© ETFCore 2025</p>
+    </footer>
+
+    <!-- JAVASCRIPT FOR INTERACTIVITY -->
+    <script>
+        // 1. SCROLL PROGRESS BAR
+        window.onscroll = function() {myFunction()};
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+
+        // 2. REACTION BUTTONS
+        function toggleReaction(btn) {
+            btn.classList.toggle('active');
+        }
+
+        // 3. CHART.JS (Updated Data from PDF)
+        const ctx = document.getElementById('feesChart').getContext('2d');
+        const feesChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Year 0', 'Year 10', 'Year 20', 'Year 30'],
+                datasets: [
+                    {
+                        label: 'Low Fee (0.1%)',
+                        data: [10000, 21589, 46609, 97868],
+                        borderColor: '#10b981',
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        fill: true,
+                        tension: 0.4
+                    },
+                    {
+                        label: 'High Fee (1.0%)',
+                        data: [10000, 19671, 38696, 76122],
+                        borderColor: '#f87171',
+                        borderDash: [5, 5],
+                        fill: false,
+                        tension: 0.4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: {
+                        callbacks: { label: function(c) { return c.dataset.label + ': £' + c.parsed.y.toLocaleString(); } }
+                    }
+                },
+                scales: {
+                    y: { ticks: { callback: function(value) { return '£' + value.toLocaleString(); } } }
+                }
+            }
+        });
+
+        // 4. SIMULATED REAL-TIME TICKER UPDATES
+        const tickers = [
+            { id: 'ticker-iitu', base: 1.2 },
+            { id: 'ticker-vuag', base: 0.8 },
+            { id: 'ticker-vwrl', base: 0.5 }
+        ];
+
+        setInterval(() => {
+            tickers.forEach(ticker => {
+                const change = (Math.random() * 0.1) - 0.05;
+                ticker.base += change;
+                
+                const el = document.getElementById(ticker.id);
+                if (el) {
+                    el.innerText = (ticker.base > 0 ? '+' : '') + ticker.base.toFixed(2) + '%';
+                    el.className = 'live-ticker-value ' + (change > 0 ? 'ticker-up' : 'ticker-down');
+                    el.style.color = ticker.base >= 0 ? '#10b981' : '#ef4444';
+                }
+            });
+        }, 3000);
+    </script>
+</body>
+</html>
