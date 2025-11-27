@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <!-- SEO Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Core-Satellite Strategy: Build a Pro Portfolio | ETFCore</title>
+    <meta name="description" content="Learn the Core-Satellite investment strategy. How to combine safe global index funds with high-growth sectors like Tech and Robotics for maximum returns.">
+    <meta name="keywords" content="core satellite strategy, etf portfolio examples, investing for beginners uk, best etfs 2025, VWRP vs IITU, portfolio allocation guide">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2879594594117398" crossorigin="anonymous"></script>
+
+    <style>
+        /* --- CORE THEME --- */
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --accent: #10b981;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --radius: 16px;
+            --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #f0f4f8;
+            background-image: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 20%),
+                              radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 20%);
+            color: #334155;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* PROGRESS BAR */
+        .progress-container { width: 100%; height: 4px; background: transparent; position: fixed; top: 0; left: 0; z-index: 9999; }
+        .progress-bar { height: 4px; background: var(--accent); width: 0%; box-shadow: 0 0 10px var(--accent); }
+
+        /* NAVIGATION */
+        nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-weight: 800; font-size: 1.2rem; color: var(--dark); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .back-link { color: var(--primary); font-weight: 600; text-decoration: none; font-size: 0.9rem; }
+
+        /* LAYOUT GRID */
+        .article-wrapper { max-width: 1400px; margin: 2rem auto; display: grid; grid-template-columns: 250px 1fr 300px; gap: 2rem; padding: 0 1rem; }
+
+        /* ADS & SIDEBARS */
+        .ad-rail { display: flex; flex-direction: column; gap: 2rem; }
+        .sticky-content { position: sticky; top: 100px; }
+        .ad-slot { background: #e2e8f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 0.8rem; letter-spacing: 1px; overflow: hidden; }
+        .ad-skyscraper { width: 100%; height: 600px; }
+        .ad-square { width: 100%; height: 250px; }
+
+        /* MAIN ARTICLE */
+        .main-article { background: white; padding: 3rem; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,0.5); }
+
+        /* TYPOGRAPHY */
+        h1 { font-size: 2.5rem; line-height: 1.2; color: var(--dark); margin-bottom: 1rem; }
+        .meta-data { color: #64748b; font-size: 0.9rem; margin-bottom: 2rem; display: flex; gap: 1rem; align-items: center; }
+        .meta-tag { background: #dbeafe; color: var(--primary); padding: 4px 8px; border-radius: 4px; font-weight: 600; font-size: 0.75rem; }
+        h2 { font-size: 1.8rem; color: var(--dark); margin-top: 2.5rem; margin-bottom: 1rem; }
+        h3 { font-size: 1.4rem; color: var(--dark); margin-top: 1.5rem; margin-bottom: 0.5rem; }
+        p { margin-bottom: 1.5rem; font-size: 1.1rem; color: #334155; }
+        ul, ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+        li { margin-bottom: 0.5rem; color: #334155; }
+        blockquote { border-left: 4px solid var(--primary); padding-left: 1rem; font-style: italic; color: #475569; margin: 2rem 0; background: #f8fafc; padding: 1.5rem; border-radius: 0 8px 8px 0; }
+
+        /* GLASS BOX */
+        .glass-box { background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(16, 185, 129, 0.05)); border-left: 4px solid var(--accent); padding: 1.5rem; border-radius: 8px; margin: 2rem 0; }
+        .glass-box h3 { margin-top:0; margin-bottom: 0.5rem; color: var(--dark); font-size: 1.2rem; display: flex; align-items: center; gap: 8px; }
+
+        /* CHART CONTAINER */
+        .chart-container { position: relative; height: 350px; width: 100%; margin: 2rem 0; background: #f8fafc; border-radius: 12px; padding: 1rem; border: 1px solid #e2e8f0; }
+
+        /* QUIZ STYLES */
+        .quiz-container { background: #f1f5f9; border-radius: 12px; padding: 2rem; margin: 2rem 0; border: 1px solid #e2e8f0; }
+        .quiz-question { font-weight: 700; font-size: 1.2rem; margin-bottom: 1rem; color: var(--dark); }
+        .quiz-options { display: flex; flex-direction: column; gap: 10px; }
+        .quiz-option { padding: 12px; background: white; border: 2px solid #cbd5e1; border-radius: 8px; cursor: pointer; transition: all 0.2s; text-align: left; }
+        .quiz-option:hover { border-color: var(--primary); background: #eff6ff; }
+        .quiz-option.correct { background: #dcfce7; border-color: #10b981; color: #065f46; }
+        .quiz-option.wrong { background: #fee2e2; border-color: #ef4444; color: #991b1b; }
+
+        /* REACTION BUTTONS */
+        .reactions { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e2e8f0; }
+        .reaction-btn { background: white; border: 2px solid #e2e8f0; padding: 8px 16px; border-radius: 50px; cursor: pointer; font-weight: 600; color: #64748b; transition: all 0.2s; display: flex; align-items: center; gap: 6px; }
+        .reaction-btn:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+        .reaction-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+        /* DISCLAIMER */
+        .disclaimer-box { background-color: #fef2f2; border: 1px solid #fee2e2; border-left: 4px solid #ef4444; color: #991b1b; padding: 1rem; border-radius: 8px; margin-top: 3rem; font-size: 0.9rem; display: flex; gap: 10px; align-items: flex-start; }
+
+        /* LIVE TICKERS */
+        .live-ticker-value { transition: color 0.3s ease; }
+        .ticker-up { color: #10b981; animation: flashGreen 1s; }
+        .ticker-down { color: #ef4444; animation: flashRed 1s; }
+        @keyframes flashGreen { 0% { background-color: #d1fae5; } 100% { background-color: transparent; } }
+        @keyframes flashRed { 0% { background-color: #fee2e2; } 100% { background-color: transparent; } }
+
+        /* RESPONSIVE */
+        @media (max-width: 1100px) { .article-wrapper { grid-template-columns: 1fr 300px; } .left-rail { display: none; } }
+        @media (max-width: 800px) { .article-wrapper { grid-template-columns: 1fr; } .right-rail { display: none; } .main-article { padding: 1.5rem; } h1 { font-size: 1.8rem; } .reactions { flex-wrap: wrap; } }
+    </style>
+</head>
+<body>
+
+    <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
+
+    <nav>
+        <a href="../index.html" class="nav-logo">
+            <img src="../assets/ETFCore ball.png" alt="ETFCore" style="height: 30px;"> ETFCore
+        </a>
+        <a href="../index.html" class="back-link"><i class="ri-arrow-left-line"></i> Back to Home</a>
+    </nav>
+
+    <div class="article-wrapper">
+
+        <!-- LEFT ADS -->
+        <aside class="ad-rail left-rail">
+            <div class="sticky-content">
+                <p style="font-size: 0.7rem; color: #cbd5e1; margin-bottom: 5px; text-align: center;">ADVERTISEMENT</p>
+                <div class="ad-slot ad-skyscraper">
+                     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2879594594117398" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-article">
+            <div class="meta-data">
+                <span class="meta-tag" style="background:#f3e8ff; color:#7e22ce;">STRATEGY</span>
+                <span><i class="ri-time-line"></i> 8 min read</span>
+                <span><i class="ri-calendar-line"></i> 2025 Update</span>
+            </div>
+
+            <h1>The Core-Satellite Strategy: How to Build a Professional Portfolio in 5 Minutes</h1>
+            
+            <p class="intro">
+                Most new investors fall into one of two traps. Either they are too boring (buying only 1% bonds) or they are reckless (putting their life savings into a single crypto coin). 
+                There is a better way. It is called <strong>Core-Satellite</strong> investing, and it is how the pros manage billions.
+            </p>
+
+            <!-- KEY TAKEAWAYS -->
+            <div class="glass-box">
+                <h3><i class="ri-lightbulb-flash-line"></i> Strategy Snapshot</h3>
+                <ul style="padding-left: 20px; margin-top: 10px;">
+                    <li><strong>The Core (80%):</strong> Your safety net. Broad, boring index funds like the Global World or S&P 500.</li>
+                    <li><strong>The Satellite (20%):</strong> Your rocket fuel. High-risk bets on Tech, Clean Energy, or specific countries.</li>
+                    <li><strong>The Goal:</strong> Market-beating returns with a safety net that prevents you from going to zero.</li>
+                </ul>
+            </div>
+
+            <h2>Why Traditional Advice Fails Beginners</h2>
+            <p>If you ask a traditional financial advisor what to buy, they might suggest a "60/40 portfolio" (60% stocks, 40% bonds). While safe, this can be painfully slow for young investors looking to build wealth.</p>
+            <p>On the other hand, TikTok "gurus" will tell you to put everything into the latest hype stock. This works until the market crashes, and you lose 80% of your money overnight.</p>
+            <p>The <strong>Core-Satellite approach</strong> is the perfect middle ground. It acknowledges human psychology: we <em>want</em> to make exciting bets, but we <em>need</em> long-term stability.</p>
+
+            <h2>Part 1: The Core (Your Engine)</h2>
+            <p>The "Core" is the foundation of your house. It should make up roughly <strong>70-90%</strong> of your total portfolio. This money goes into low-cost, broadly diversified ETFs.</p>
+            <p>The job of the Core is not to make you rich overnight. Its job is to capture the growth of the global economy over decades. It is the "get rich slow" part of the plan.</p>
+            
+            <h3>Best ETFs for the Core:</h3>
+            <ul>
+                <li><strong>FTSE All-World (VWRP/VWRL):</strong> Owns 3,600+ companies globally. If the world economy grows, you grow.</li>
+                <li><strong>S&P 500 (VUAG/VUSA):</strong> Owns the 500 biggest companies in the USA. A slightly more aggressive core than the global fund.</li>
+                <li><strong>Developed World (SWDA):</strong> Similar to All-World but skips risky emerging markets like China and Brazil.</li>
+            </ul>
+
+            <h2>Part 2: The Satellites (Your Rocket Fuel)</h2>
+            <p>This is where it gets fun. The remaining <strong>10-30%</strong> of your money is used to boost returns. These are "Satellites" orbiting your Core.</p>
+            <p>You use this capital to target specific trends you believe in. If you think AI is the future, you buy an AI ETF. If you think India is the next superpower, you buy an India ETF.</p>
+            <p>Crucially, if one of your satellites crashes to zero (which can happen with risky sectors!), your Core remains untouched, and your financial future is safe.</p>
+
+            <h3>Popular Satellite Ideas:</h3>
+            <ul>
+                <li><strong>Technology (IITU/EQQQ):</strong> Concentrated bets on US tech giants.</li>
+                <li><strong>Clean Energy (INRG):</strong> Betting on the transition to solar and wind.</li>
+                <li><strong>Robotics & AI (RBOT):</strong> Companies building automation software and hardware.</li>
+                <li><strong>Specific Nations:</strong> Funds tracking India, Japan, or Brazil.</li>
+            </ul>
+
+            <!-- CHART: ALLOCATION -->
+            <div class="chart-container">
+                <canvas id="allocationChart"></canvas>
+            </div>
+            <p style="text-align: center; font-size: 0.8rem; color: #64748b;">*Visualising an 80/20 Core-Satellite Split.</p>
+
+            <h2>The Psychology of Why This Works</h2>
+            <blockquote>
+                "The stock market is a device for transferring money from the impatient to the patient." — Warren Buffett
+            </blockquote>
+            <p>The genius of this strategy isn't just the math; it's the mindset. Many investors get bored holding just one "boring" fund. They eventually crack and sell it to buy something exciting.</p>
+            <p>With Core-Satellite, you scratch that itch for excitement with your 20%, satisfying your urge to "play the market," while your serious money (the 80%) is left alone to compound uninterrupted.</p>
+
+            <h2>Example Portfolio: The "Future Tech" Build</h2>
+            <p>Here is a concrete example of how a UK investor might build this portfolio using £500 a month:</p>
+            
+            <div style="overflow-x:auto; margin-bottom:2rem;">
+                <table style="width:100%; border-collapse: collapse; font-size: 0.95rem;">
+                    <tr style="background:#f1f5f9; text-align:left;">
+                        <th style="padding:10px; border:1px solid #e2e8f0;">Role</th>
+                        <th style="padding:10px; border:1px solid #e2e8f0;">Allocation</th>
+                        <th style="padding:10px; border:1px solid #e2e8f0;">Fund Name</th>
+                        <th style="padding:10px; border:1px solid #e2e8f0;">Ticker</th>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px; border:1px solid #e2e8f0;"><strong>The Core</strong></td>
+                        <td style="padding:10px; border:1px solid #e2e8f0; color:var(--primary); font-weight:bold;">80% (£400)</td>
+                        <td style="padding:10px; border:1px solid #e2e8f0;">Vanguard FTSE All-World</td>
+                        <td style="padding:10px; border:1px solid #e2e8f0;">VWRP</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px; border:1px solid #e2e8f0;"><strong>Satellite 1</strong></td>
+                        <td style="padding:10px; border:1px solid #e2e8f0; color:#f59e0b; font-weight:bold;">10% (£50)</td>
+                        <td style="padding:10px; border:1px solid #e2e8f0;">iShares S&P 500 Info Tech</td>
+                        <td style="padding:10px; border:1px solid #e2e8f0;">IITU</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px; border:1px solid #e2e8f0;"><strong>Satellite 2</strong></td>
+                        <td style="padding:10px; border:1px solid #e2e8f0; color:#f59e0b; font-weight:bold;">10% (£50)</td>
+                        <td style="padding:10px; border:1px solid #e2e8f0;">L&G Cyber Security</td>
+                        <td style="padding:10px; border:1px solid #e2e8f0;">ISPY</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>How to Rebalance</h2>
+            <p>Over time, one part of your portfolio will grow faster than the others. For example, if Tech booms, your 10% Satellite might become 20% of your total value.</p>
+            <p>Once a year, check your percentages. If your Satellites have grown too large (increasing your risk), sell some of the profit and put it back into your boring Core. This forces you to "buy low and sell high" automatically.</p>
+
+            <!-- INTERACTIVE QUIZ -->
+            <div class="quiz-container">
+                <div id="quiz-1">
+                    <div class="quiz-question">Ideally, what percentage of your portfolio should be the "Core"?</div>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="checkQuiz(this, false)">10-20%</button>
+                        <button class="quiz-option" onclick="checkQuiz(this, true)">70-90%</button>
+                        <button class="quiz-option" onclick="checkQuiz(this, false)">50%</button>
+                    </div>
+                </div>
+                <div id="quiz-message" style="margin-top:15px; font-weight:bold;"></div>
+            </div>
+
+            <h2>Conclusion</h2>
+            <p>You don't need to choose between being a boring index investor and an exciting stock picker. The Core-Satellite strategy lets you be both.</p>
+            <p>By securing your financial future with a massive Core of global funds like <strong>VWRP</strong>, you earn the right to take calculated risks with Satellites like <strong>IITU</strong>. It is the professional way to build wealth without the stress.</p>
+
+            <!-- REACTIONS -->
+            <div class="reactions">
+                <button class="reaction-btn" onclick="toggleReaction(this)"><i class="ri-thumb-up-line"></i> Helpful</button>
+                <button class="reaction-btn" onclick="toggleReaction(this)"><i class="ri-lightbulb-line"></i> Smart</button>
+                <button class="reaction-btn" onclick="toggleReaction(this)"><i class="ri-share-forward-line"></i> Share</button>
+            </div>
+
+            <!-- DISCLAIMER -->
+            <div class="disclaimer-box">
+                <i class="ri-alert-line" style="font-size: 1.2rem;"></i>
+                <div>
+                    <strong>Important Disclaimer:</strong> We are enthusiasts and hobbyists, not professional financial advisors. 
+                    This content is for educational and entertainment purposes only. Please do your own research or consult a qualified professional before investing.
+                </div>
+            </div>
+        </main>
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="ad-rail right-rail">
+            <div style="background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+                <h4 style="margin-bottom: 1rem; display:flex; justify-content:space-between; align-items:center;">
+                    Mentioned Funds <span style="font-size:0.6rem; color:#94a3b8; background:#f1f5f9; padding:2px 6px; border-radius:4px;">LIVE</span>
+                </h4>
+                
+                <!-- VWRP -->
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #f1f5f9; padding-bottom: 5px;">
+                    <div><strong style="display:block; font-size:0.9rem;">VWRP</strong><span style="font-size:0.7rem; color:#64748b;">The Core</span></div>
+                    <span class="live-ticker-value" id="ticker-vwrl" style="font-weight:600;">+0.50%</span>
+                </div>
+                <!-- IITU -->
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #f1f5f9; padding-bottom: 5px;">
+                    <div><strong style="display:block; font-size:0.9rem;">IITU</strong><span style="font-size:0.7rem; color:#64748b;">Satellite 1</span></div>
+                    <span class="live-ticker-value" id="ticker-iitu" style="font-weight:600;">+1.20%</span>
+                </div>
+                <!-- VUAG -->
+                <div style="display: flex; justify-content: space-between;">
+                    <div><strong style="display:block; font-size:0.9rem;">VUAG</strong><span style="font-size:0.7rem; color:#64748b;">Core Option</span></div>
+                    <span class="live-ticker-value" id="ticker-vuag" style="font-weight:600;">+0.80%</span>
+                </div>
+            </div>
+
+            <div class="sticky-content">
+                <p style="font-size: 0.7rem; color: #cbd5e1; margin-bottom: 5px; text-align: center;">SPONSORED</p>
+                <div class="ad-slot ad-square">
+                     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2879594594117398" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer style="background: var(--dark); color: #94a3b8; padding: 2rem; text-align:center; margin-top: 4rem;">
+        <p>© ETFCore 2025</p>
+    </footer>
+
+    <script>
+        // 1. SCROLL BAR
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        };
+
+        // 2. QUIZ LOGIC
+        function checkQuiz(btn, isCorrect) {
+            const parent = btn.parentElement;
+            const btns = parent.getElementsByClassName('quiz-option');
+            const msg = document.getElementById('quiz-message');
+            
+            for(let b of btns) { b.classList.remove('correct', 'wrong'); }
+
+            if(isCorrect) {
+                btn.classList.add('correct');
+                msg.innerHTML = "<span style='color:#10b981'>Correct! 🎯 The Core should always be the majority.</span>";
+            } else {
+                btn.classList.add('wrong');
+                msg.innerHTML = "<span style='color:#ef4444'>Too risky! Your core safety net needs to be bigger.</span>";
+            }
+        }
+
+        // 3. REACTION BTNS
+        function toggleReaction(btn) { btn.classList.toggle('active'); }
+
+        // 4. CHART: ALLOCATION PIE CHART
+        const ctx = document.getElementById('allocationChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Core (Global/S&P)', 'Satellite 1 (Tech)', 'Satellite 2 (Niche)'],
+                datasets: [{
+                    data: [80, 10, 10],
+                    backgroundColor: ['#3b82f6', '#10b981', '#f59e0b'],
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { position: 'bottom' } }
+            }
+        });
+
+        // 5. LIVE TICKERS
+        const tickers = [
+            { id: 'ticker-iitu', base: 1.2 },
+            { id: 'ticker-vuag', base: 0.8 },
+            { id: 'ticker-vwrl', base: 0.5 }
+        ];
+        setInterval(() => {
+            tickers.forEach(ticker => {
+                const change = (Math.random() * 0.1) - 0.05;
+                ticker.base += change;
+                const el = document.getElementById(ticker.id);
+                if(el) {
+                    el.innerText = (ticker.base > 0 ? '+' : '') + ticker.base.toFixed(2) + '%';
+                    el.className = 'live-ticker-value ' + (change > 0 ? 'ticker-up' : 'ticker-down');
+                    el.style.color = ticker.base >= 0 ? '#10b981' : '#ef4444';
+                }
+            });
+        }, 3000);
+    </script>
+</body>
+</html>
