@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <!-- SEO Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Free Shares Guide: How to Claim Up to £100 | ETFCore</title>
+    <meta name="description" content="Learn how to claim free fractional shares with Trading 212. A complete guide to the invite campaign, fees, and how to grow your free money.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2879594594117398" crossorigin="anonymous"></script>
+
+    <style>
+        /* --- CORE THEME --- */
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --accent: #10b981;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --radius: 16px;
+            --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #f0f4f8;
+            background-image: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 20%),
+                              radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 20%);
+            color: #334155;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* PROGRESS BAR */
+        .progress-container { width: 100%; height: 4px; background: transparent; position: fixed; top: 0; left: 0; z-index: 9999; }
+        .progress-bar { height: 4px; background: var(--accent); width: 0%; box-shadow: 0 0 10px var(--accent); }
+
+        /* NAVIGATION */
+        nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-weight: 800; font-size: 1.2rem; color: var(--dark); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .back-link { color: var(--primary); font-weight: 600; text-decoration: none; font-size: 0.9rem; }
+
+        /* LAYOUT GRID */
+        .article-wrapper { max-width: 1400px; margin: 2rem auto; display: grid; grid-template-columns: 250px 1fr 300px; gap: 2rem; padding: 0 1rem; }
+
+        /* ADS & SIDEBARS */
+        .ad-rail { display: flex; flex-direction: column; gap: 2rem; }
+        .sticky-content { position: sticky; top: 100px; }
+        .ad-slot { background: #e2e8f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 0.8rem; letter-spacing: 1px; overflow: hidden; }
+        .ad-skyscraper { width: 100%; height: 600px; }
+        .ad-square { width: 100%; height: 250px; }
+
+        /* MAIN ARTICLE */
+        .main-article { background: white; padding: 3rem; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,0.5); }
+
+        /* TYPOGRAPHY */
+        h1 { font-size: 2.5rem; line-height: 1.2; color: var(--dark); margin-bottom: 1rem; }
+        .meta-data { color: #64748b; font-size: 0.9rem; margin-bottom: 2rem; display: flex; gap: 1rem; align-items: center; }
+        .meta-tag { background: #dbeafe; color: var(--primary); padding: 4px 8px; border-radius: 4px; font-weight: 600; font-size: 0.75rem; }
+        h2 { font-size: 1.8rem; color: var(--dark); margin-top: 2.5rem; margin-bottom: 1rem; }
+        h3 { font-size: 1.4rem; color: var(--dark); margin-top: 1.5rem; margin-bottom: 0.5rem; }
+        p { margin-bottom: 1.5rem; font-size: 1.1rem; color: #334155; }
+        ul, ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+        li { margin-bottom: 0.5rem; color: #334155; }
+        
+        /* GLASS BOX */
+        .glass-box { background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(16, 185, 129, 0.05)); border-left: 4px solid var(--accent); padding: 1.5rem; border-radius: 8px; margin: 2rem 0; }
+        .glass-box h3 { margin-top:0; margin-bottom: 0.5rem; color: var(--dark); font-size: 1.2rem; display: flex; align-items: center; gap: 8px; }
+
+        /* CHART CONTAINER */
+        .chart-container { position: relative; height: 350px; width: 100%; margin: 2rem 0; background: #f8fafc; border-radius: 12px; padding: 1rem; border: 1px solid #e2e8f0; }
+
+        /* QUIZ STYLES */
+        .quiz-container { background: #f1f5f9; border-radius: 12px; padding: 2rem; margin: 2rem 0; border: 1px solid #e2e8f0; }
+        .quiz-question { font-weight: 700; font-size: 1.2rem; margin-bottom: 1rem; color: var(--dark); }
+        .quiz-options { display: flex; flex-direction: column; gap: 10px; }
+        .quiz-option { padding: 12px; background: white; border: 2px solid #cbd5e1; border-radius: 8px; cursor: pointer; transition: all 0.2s; text-align: left; }
+        .quiz-option:hover { border-color: var(--primary); background: #eff6ff; }
+        .quiz-option.correct { background: #dcfce7; border-color: #10b981; color: #065f46; }
+        .quiz-option.wrong { background: #fee2e2; border-color: #ef4444; color: #991b1b; }
+
+        /* REACTION BUTTONS */
+        .reactions { display: flex; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e2e8f0; }
+        .reaction-btn { background: white; border: 2px solid #e2e8f0; padding: 8px 16px; border-radius: 50px; cursor: pointer; font-weight: 600; color: #64748b; transition: all 0.2s; display: flex; align-items: center; gap: 6px; }
+        .reaction-btn:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+        .reaction-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+        /* DISCLAIMER */
+        .disclaimer-box { background-color: #fef2f2; border: 1px solid #fee2e2; border-left: 4px solid #ef4444; color: #991b1b; padding: 1rem; border-radius: 8px; margin-top: 3rem; font-size: 0.9rem; display: flex; gap: 10px; align-items: flex-start; }
+
+        /* LIVE TICKERS */
+        .live-ticker-value { transition: color 0.3s ease; }
+        .ticker-up { color: #10b981; animation: flashGreen 1s; }
+        .ticker-down { color: #ef4444; animation: flashRed 1s; }
+        @keyframes flashGreen { 0% { background-color: #d1fae5; } 100% { background-color: transparent; } }
+        @keyframes flashRed { 0% { background-color: #fee2e2; } 100% { background-color: transparent; } }
+
+        /* RESPONSIVE */
+        @media (max-width: 1100px) { .article-wrapper { grid-template-columns: 1fr 300px; } .left-rail { display: none; } }
+        @media (max-width: 800px) { .article-wrapper { grid-template-columns: 1fr; } .right-rail { display: none; } .main-article { padding: 1.5rem; } h1 { font-size: 1.8rem; } .reactions { flex-wrap: wrap; } }
+    </style>
+</head>
+<body>
+
+    <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
+
+    <nav>
+        <a href="../index.html" class="nav-logo">
+            <img src="../assets/ETFCore ball.png" alt="ETFCore" style="height: 30px;"> ETFCore
+        </a>
+        <a href="../index.html" class="back-link"><i class="ri-arrow-left-line"></i> Back to Home</a>
+    </nav>
+
+    <div class="article-wrapper">
+
+        <!-- LEFT ADS -->
+        <aside class="ad-rail left-rail">
+            <div class="sticky-content">
+                <p style="font-size: 0.7rem; color: #cbd5e1; margin-bottom: 5px; text-align: center;">ADVERTISEMENT</p>
+                <div class="ad-slot ad-skyscraper">
+                     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2879594594117398" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-article">
+            <div class="meta-data">
+                <span class="meta-tag" style="background:#dbeafe; color:var(--primary);">PROMO</span>
+                <span><i class="ri-time-line"></i> 4 min read</span>
+                <span><i class="ri-calendar-line"></i> 2025 Campaign</span>
+            </div>
+
+            <h1>Free Shares for You and Your Friends! 🚀</h1>
+            
+            <p class="intro">
+                Trading 212 has been one of the most popular platforms in Europe for commission-free stock and ETF investing. If you've been considering opening an account, now is the perfect time. 
+                The “Invite a Friend” campaign is running until <strong>November 6th, 2025</strong>, giving you both free fractional shares.
+            </p>
+
+            <!-- KEY TAKEAWAYS -->
+            <div class="glass-box">
+                <h3><i class="ri-lightbulb-flash-line"></i> How to Claim</h3>
+                <ul style="padding-left: 20px; margin-top: 10px;">
+                    <li><strong>Sign Up:</strong> Use an invite link to create an Invest or ISA account.</li>
+                    <li><strong>Deposit:</strong> Fund the account with the minimum amount (usually £1 or £10 depending on region).</li>
+                    <li><strong>Get Rewarded:</strong> Receive a free share worth up to £100 within 3 business days.</li>
+                </ul>
+            </div>
+
+            <h2>How the Campaign Works</h2>
+            <p>The Trading 212 free shares campaign is a simple, risk-free way to start investing. Whether you're new to the stock market or already building a portfolio, this limited-time offer gives you a head start.</p>
+            <ol>
+                <li><strong>Sign up:</strong> Use an exclusive invite link.</li>
+                <li><strong>Verify your account:</strong> A quick identity check ensures compliance with regulations.</li>
+                <li><strong>Make your first deposit:</strong> This triggers the reward mechanism.</li>
+                <li><strong>Receive free shares:</strong> Both you and your friend get a fractional share in real companies like Apple, Tesla, or other global giants.</li>
+            </ol>
+
+            <h2>The Power of Free Money</h2>
+            <p>Getting a free share worth £20 or £50 might not sound life-changing, but if you keep it invested, it grows. Here is what happens if you receive a <strong>£100</strong> free share and simply leave it in the S&P 500 for 20 years (assuming 10% average return).</p>
+
+            <!-- CHART: GROWTH OF FREE SHARE -->
+            <div class="chart-container">
+                <canvas id="freeShareChart"></canvas>
+            </div>
+            <p style="text-align: center; font-size: 0.8rem; color: #64748b;">*Projection: A £100 free share growing at 10% annually with no extra contributions.</p>
+
+            <h2>Why Choose Trading 212?</h2>
+            <p>It isn't just about the freebie. Trading 212 is widely seen as one of the best apps for beginners for several reasons:</p>
+            <ul>
+                <li><strong>Commission-free trading:</strong> No fees when buying or selling stocks and ETFs.</li>
+                <li><strong>Fractional shares:</strong> Own part of expensive companies (like Amazon) with as little as £1.</li>
+                <li><strong>User-friendly app:</strong> Highly rated on both iOS and Android for its clean interface.</li>
+                <li><strong>Regulated:</strong> Fully regulated in the UK (FCA) and EU, providing safety for your funds.</li>
+            </ul>
+
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            
+            <h3>When will I get my free shares?</h3>
+            <p>Within <strong>3 business days</strong> after both you and your friend have verified and funded your account.</p>
+
+            <h3>When can I sell my shares?</h3>
+            <p>You can sell the free fractional shares immediately! However, you cannot withdraw the <em>cash value</em> to your bank account until <strong>30 days</strong> have passed. This prevents people from gaming the system.</p>
+
+            <h3>Can I lose money?</h3>
+            <p>No, you cannot lose more than the value of your account. Since the share was free, you technically have zero risk on that specific asset.</p>
+
+            <!-- INTERACTIVE QUIZ -->
+            <div class="quiz-container">
+                <div id="quiz-1">
+                    <div class="quiz-question">How soon can you withdraw the CASH value of a free share?</div>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="checkQuiz(this, false)">Immediately</button>
+                        <button class="quiz-option" onclick="checkQuiz(this, true)">After 30 Days</button>
+                        <button class="quiz-option" onclick="checkQuiz(this, false)">Never</button>
+                    </div>
+                </div>
+                <div id="quiz-message" style="margin-top:15px; font-weight:bold;"></div>
+            </div>
+
+            <!-- REACTIONS -->
+            <div class="reactions">
+                <button class="reaction-btn" onclick="toggleReaction(this)"><i class="ri-thumb-up-line"></i> Helpful</button>
+                <button class="reaction-btn" onclick="toggleReaction(this)"><i class="ri-gift-line"></i> Got Mine</button>
+                <button class="reaction-btn" onclick="toggleReaction(this)"><i class="ri-share-forward-line"></i> Share</button>
+            </div>
+
+            <!-- DISCLAIMER -->
+            <div class="disclaimer-box">
+                <i class="ri-alert-line" style="font-size: 1.2rem;"></i>
+                <div>
+                    <strong>Important Disclaimer:</strong> We are enthusiasts and hobbyists, not professional financial advisors. 
+                    This article contains information about promotional offers which may change. Please read the official Terms & Conditions on the provider's website.
+                </div>
+            </div>
+        </main>
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="ad-rail right-rail">
+            <div style="background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+                <h4 style="margin-bottom: 1rem; display:flex; justify-content:space-between; align-items:center;">
+                    Market Watch <span style="font-size:0.6rem; color:#94a3b8; background:#f1f5f9; padding:2px 6px; border-radius:4px;">LIVE</span>
+                </h4>
+                
+                <!-- VWRL -->
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #f1f5f9; padding-bottom: 5px;">
+                    <div><strong style="display:block; font-size:0.9rem;">VWRL</strong><span style="font-size:0.7rem; color:#64748b;">Global</span></div>
+                    <span class="live-ticker-value" id="ticker-vwrl" style="font-weight:600;">+0.50%</span>
+                </div>
+                <!-- IITU -->
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #f1f5f9; padding-bottom: 5px;">
+                    <div><strong style="display:block; font-size:0.9rem;">IITU</strong><span style="font-size:0.7rem; color:#64748b;">Tech</span></div>
+                    <span class="live-ticker-value" id="ticker-iitu" style="font-weight:600;">+1.20%</span>
+                </div>
+                <!-- VUAG -->
+                <div style="display: flex; justify-content: space-between;">
+                    <div><strong style="display:block; font-size:0.9rem;">VUAG</strong><span style="font-size:0.7rem; color:#64748b;">USA</span></div>
+                    <span class="live-ticker-value" id="ticker-vuag" style="font-weight:600;">+0.80%</span>
+                </div>
+            </div>
+
+            <div class="sticky-content">
+                <p style="font-size: 0.7rem; color: #cbd5e1; margin-bottom: 5px; text-align: center;">SPONSORED</p>
+                <div class="ad-slot ad-square">
+                     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2879594594117398" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer style="background: var(--dark); color: #94a3b8; padding: 2rem; text-align:center; margin-top: 4rem;">
+        <p>© ETFCore 2025</p>
+    </footer>
+
+    <script>
+        // 1. SCROLL BAR
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        };
+
+        // 2. QUIZ LOGIC
+        function checkQuiz(btn, isCorrect) {
+            const parent = btn.parentElement;
+            const btns = parent.getElementsByClassName('quiz-option');
+            const msg = document.getElementById('quiz-message');
+            
+            for(let b of btns) { b.classList.remove('correct', 'wrong'); }
+
+            if(isCorrect) {
+                btn.classList.add('correct');
+                msg.innerHTML = "<span style='color:#10b981'>Correct! 🎯 You can sell immediately, but cash withdraw needs 30 days.</span>";
+            } else {
+                btn.classList.add('wrong');
+                msg.innerHTML = "<span style='color:#ef4444'>Incorrect. Check the FAQ section again!</span>";
+            }
+        }
+
+        // 3. REACTION BTNS
+        function toggleReaction(btn) { btn.classList.toggle('active'); }
+
+        // 4. CHART: GROWTH OF FREE SHARE
+        const ctx = document.getElementById('freeShareChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Start', 'Year 5', 'Year 10', 'Year 15', 'Year 20'],
+                datasets: [{
+                    label: 'Value of Free Share (£)',
+                    data: [100, 161, 259, 417, 672], /* 10% compounding */
+                    borderColor: '#3b82f6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { position: 'bottom' } },
+                scales: { y: { beginAtZero: true, ticks: { callback: function(value) { return '£' + value; } } } }
+            }
+        });
+
+        // 5. LIVE TICKERS
+        const tickers = [
+            { id: 'ticker-iitu', base: 1.2 },
+            { id: 'ticker-vuag', base: 0.8 },
+            { id: 'ticker-vwrl', base: 0.5 }
+        ];
+        setInterval(() => {
+            tickers.forEach(ticker => {
+                const change = (Math.random() * 0.1) - 0.05;
+                ticker.base += change;
+                const el = document.getElementById(ticker.id);
+                if(el) {
+                    el.innerText = (ticker.base > 0 ? '+' : '') + ticker.base.toFixed(2) + '%';
+                    el.className = 'live-ticker-value ' + (change > 0 ? 'ticker-up' : 'ticker-down');
+                    el.style.color = ticker.base >= 0 ? '#10b981' : '#ef4444';
+                }
+            });
+        }, 3000);
+    </script>
+</body>
+</html>
